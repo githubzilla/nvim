@@ -91,6 +91,9 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 
+"== rust.vim
+Plug 'rust-lang/rust.vim'
+
 "== which key
 Plug 'folke/which-key.nvim'
 
