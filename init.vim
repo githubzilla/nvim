@@ -100,6 +100,9 @@ Plug 'folke/which-key.nvim'
 "== ctrlspace
 Plug 'vim-ctrlspace/vim-ctrlspace'
 
+"== unimpaired
+Plug 'tpope/vim-unimpaired'
+
 call plug#end()
 
 "== autosave.vim ==
