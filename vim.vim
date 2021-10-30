@@ -11,6 +11,9 @@ nnoremap <leader>e :Explore<CR>
 "== blink cursor ==
 set guicursor=a:blinkon100
 
+"== mouse ==
+set mouse=a
+
 "== map localleader ==
 let maplocalleader = "\\"
 
