@@ -9,7 +9,10 @@ nnoremap <NL> i<CR><ESC>
 nnoremap <leader>e :Explore<CR>
 
 "== blink cursor ==
-:set guicursor=a:blinkon100
+set guicursor=a:blinkon100
+
+"== map localleader ==
+let maplocalleader = "\\"
 
 "== copy to clipboard
 map <F2> :w !pbcopy<CR><CR>

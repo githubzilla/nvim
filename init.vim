@@ -16,7 +16,7 @@ Plug 'mhinz/vim-startify'
 Plug '907th/vim-auto-save'
 
 "== nerdtree
-Plug 'preservim/nerdtree'
+"Plug 'preservim/nerdtree'
 
 "== ranger.vim
 Plug 'rbgrouleff/bclose.vim'
@@ -55,10 +55,10 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 "== treesitter, disabled since it's not work under coc.vim
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+"Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 "== lsp signature, disabled since it not work under coc.vim
-Plug 'ray-x/lsp_signature.nvim'
+"Plug 'ray-x/lsp_signature.nvim'
 
 "Plug plantuml-syntax
 Plug 'aklt/plantuml-syntax'
@@ -71,28 +71,34 @@ Plug 'dinhhuy258/vim-local-history', {'branch': 'master', 'do': ':UpdateRemotePl
 
 "== rust-tools
 " Collection of common configurations for the Nvim LSP client
-Plug 'neovim/nvim-lspconfig'
+"Plug 'neovim/nvim-lspconfig'
 " Completion framework
-Plug 'hrsh7th/nvim-cmp'
+"Plug 'hrsh7th/nvim-cmp'
 " LSP completion source for nvim-cmp
-Plug 'hrsh7th/cmp-nvim-lsp'
+"Plug 'hrsh7th/cmp-nvim-lsp'
 " Snippet completion source for nvim-cmp
-Plug 'hrsh7th/cmp-vsnip'
+"Plug 'hrsh7th/cmp-vsnip'
 " Other usefull completion sources
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-buffer'
+"Plug 'hrsh7th/cmp-path'
+"Plug 'hrsh7th/cmp-buffer'
 " See hrsh7th's other plugins for more completion sources!
 " To enable more of the features of rust-analyzer, such as inlay hints and more!
-Plug 'simrat39/rust-tools.nvim'
+"Plug 'simrat39/rust-tools.nvim'
 " Snippet engine
-Plug 'hrsh7th/vim-vsnip'
+"Plug 'hrsh7th/vim-vsnip'
 " Fuzzy finder
 " Optional
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-lua/popup.nvim'
+"Plug 'nvim-lua/plenary.nvim'
 
 "== rust.vim
-Plug 'rust-lang/rust.vim'
+"Plug 'rust-lang/rust.vim'
+
+"== coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+"== vimspector
+Plug 'puremourning/vimspector'
 
 "== which key
 Plug 'folke/which-key.nvim'
@@ -112,7 +118,7 @@ source ~/.config/nvim/autosave.vim
 source ~/.config/nvim/vim-airline.vim
 
 "== nerdtree
-source ~/.config/nvim/nerdtree.vim
+"source ~/.config/nvim/nerdtree.vim
 
 "== nvim tree ==
 "source ~/.config/nvim/nvim-tree.vim
@@ -130,7 +136,7 @@ source ~/.config/nvim/dash.vim
 source ~/.config/nvim/telescope.vim
 
 "== treesitter ==
-source ~/.config/nvim/treesitter.vim
+"source ~/.config/nvim/treesitter.vim
 
 "== sneak ==
 source ~/.config/nvim/sneak.vim
@@ -138,17 +144,20 @@ source ~/.config/nvim/sneak.vim
 "== mundo ==
 source ~/.config/nvim/localhistory.vim
 
+"== coc ==
+source ~/.config/nvim/coc.vim
+
 "== rust-tools.vim
-source ~/.config/nvim/rust-tools.vim
+"source ~/.config/nvim/rust-tools.vim
 
 "== nvim-lspconfig
-source ~/.config/nvim/lspconfig.vim
+"source ~/.config/nvim/lspconfig.vim
 
 "== lsp signature
-source ~/.config/nvim/lsp_signature.vim
+"source ~/.config/nvim/lsp_signature.vim
 
 "== nvim-cmp.vim
-source ~/.config/nvim/nvim-cmp.vim
+"source ~/.config/nvim/nvim-cmp.vim
 
 "== ccls.vim
 "source ~/.config/nvim/ccls.vim
@@ -162,3 +171,5 @@ source ~/.config/nvim/which_key.vim
 "== ctrlspace
 source ~/.config/nvim/vim-ctrlspace.vim
 
+"== vimspector
+source ~/.config/nvim/vimspector.vim
