@@ -173,3 +173,6 @@ source ~/.config/nvim/vim-ctrlspace.vim
 
 "== vimspector
 source ~/.config/nvim/vimspector.vim
+
+"== quickfix
+source ~/.config/nvim/quick_fix.vim
