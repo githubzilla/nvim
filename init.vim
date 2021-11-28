@@ -6,6 +6,8 @@ set termguicolors
 "== expand tab to space
 set expandtab
 set shiftwidth=4
+"== mouse 
+set mouse=a
 
 call plug#begin()
 
