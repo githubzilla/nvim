@@ -103,6 +103,9 @@ Plug 'rust-lang/rust.vim'
 "== which key
 Plug 'folke/which-key.nvim'
 
+"== vista function/variable outline
+Plug 'liuchengxu/vista.vim'
+
 "== ctrlspace
 Plug 'vim-ctrlspace/vim-ctrlspace'
 
@@ -171,3 +174,5 @@ source ~/.config/nvim/which_key.vim
 "== ctrlspace
 source ~/.config/nvim/vim-ctrlspace.vim
 
+"== vista
+source ~/.config/nvim/vista.vim
