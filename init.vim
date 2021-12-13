@@ -55,6 +55,7 @@ Plug 'rizzatti/dash.vim'
 "== telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-live-grep-raw.nvim'
 
 "== treesitter, disabled since it's not work under coc.vim
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
