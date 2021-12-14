@@ -43,6 +43,11 @@ end
 --        debounce_text_changes = 150,
 --      }
 -- }
+
+local extension_path = '/Users/tianxj/.vscode/extensions/codelldb-aarch64-darwin.vsix/extension/'
+local codelldb_path = extension_path .. 'adapter/codelldb'
+local liblldb_path = extension_path .. 'lldb/lib/liblldb.dylib'
+
 local opts = {
     tools = { -- rust-tools options
         -- Automatically set inlay hints (type hints)
@@ -56,19 +61,19 @@ local opts = {
 		-- options right now: termopen / quickfix
 		executor = require("rust-tools/executors").termopen,
 
-        runnables = {
-            -- whether to use telescope for selection menu or not
-            use_telescope = true
+        -- runnables = {
+        --     -- whether to use telescope for selection menu or not
+        --     use_telescope = true
 
-            -- rest of the opts are forwarded to telescope
-        },
+        --     -- rest of the opts are forwarded to telescope
+        -- },
 
-        debuggables = {
-            -- whether to use telescope for selection menu or not
-            use_telescope = true
+        -- debuggables = {
+        --     -- whether to use telescope for selection menu or not
+        --     use_telescope = true
 
-            -- rest of the opts are forwarded to telescope
-        },
+        --     -- rest of the opts are forwarded to telescope
+        -- },
 
         -- These apply to the default RustSetInlayHints command
         inlay_hints = {
@@ -150,12 +155,13 @@ local opts = {
 
     -- debugging stuff
     dap = {
-        adapter = {
-            type = 'executable',
-            command = 'lldb-vscode',
-            name = "rt_lldb"
+            -- adapter = require('rust-tools.dap').get_codelldb_adapter(codelldb_path, liblldb_path)
+            adapter = {
+                type = 'executable',
+                command = '/opt/homebrew/Cellar/llvm/13.0.0_1/Toolchains/LLVM13.0.0.xctoolchain/usr/bin/lldb-vscode',
+                name = "rt_lldb"
+            }
         }
-    }
 }
 
 require('rust-tools').setup(opts)
