@@ -113,7 +113,7 @@ Plug 'folke/which-key.nvim'
 Plug 'liuchengxu/vista.vim'
 
 "== ctrlspace
-Plug 'vim-ctrlspace/vim-ctrlspace'
+"Plug 'vim-ctrlspace/vim-ctrlspace'
 
 "== unimpaired
 Plug 'tpope/vim-unimpaired'
@@ -121,9 +121,6 @@ Plug 'tpope/vim-unimpaired'
 "== vim-clap
 " Build the extra binary if cargo exists on your system.
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
-
-"== workspace
-Plug 'thaerkh/vim-workspace'
 
 call plug#end()
 
@@ -185,7 +182,7 @@ source ~/.config/nvim/vim.vim
 source ~/.config/nvim/which_key.vim
 
 "== ctrlspace
-source ~/.config/nvim/vim-ctrlspace.vim
+"source ~/.config/nvim/vim-ctrlspace.vim
 
 "== vista
 source ~/.config/nvim/vista.vim
@@ -195,5 +192,6 @@ source ~/.config/nvim/vista.vim
 "== vimspector
 source ~/.config/nvim/vimspector.vim
 
-"== workspace.vim
-source ~/.config/nvim/workspace.vim
+"== vim-startify
+source ~/.config/nvim/startify.vim
+

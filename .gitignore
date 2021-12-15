@@ -4,4 +4,5 @@ $HOME
 .local-history
 .cs_files
 .netrwhist
-
+.undodir
+session

@@ -14,3 +14,8 @@ if executable("ag")
 endif
 
 let g:CtrlSpaceFileEngine = "file_engine_darwin_amd64"
+
+" disable workspace
+let g:CtrlSpaceLoadLastWorkspaceOnStart = 0
+let g:CtrlSpaceSaveWorkspaceOnSwitch = 0
+let g:CtrlSpaceSaveWorkspaceOnExit = 0
