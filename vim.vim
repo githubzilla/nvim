@@ -12,6 +12,4 @@ nnoremap <leader>e :Explore<CR>
 :set guicursor=a:blinkon100
 
 "== copy to clipboard
-map <F2> :w !pbcopy<CR><CR>
-"== paste from clipboard
-map <F3> :r !pbpaste<CR>
+map <F2> "*y
