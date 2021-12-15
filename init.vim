@@ -122,6 +122,8 @@ Plug 'tpope/vim-unimpaired'
 " Build the extra binary if cargo exists on your system.
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 
+"== workspace
+Plug 'thaerkh/vim-workspace'
 
 call plug#end()
 
@@ -192,3 +194,6 @@ source ~/.config/nvim/vista.vim
 "source ~/.config/nvim/dapui.vim
 "== vimspector
 source ~/.config/nvim/vimspector.vim
+
+"== workspace.vim
+source ~/.config/nvim/workspace.vim
