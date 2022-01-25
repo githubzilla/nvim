@@ -122,6 +122,13 @@ Plug 'tpope/vim-unimpaired'
 " Build the extra binary if cargo exists on your system.
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 
+"== tasks
+Plug 'skywind3000/asynctasks.vim'
+Plug 'skywind3000/asyncrun.vim'
+
+"== neoformat
+Plug 'sbdchd/neoformat'
+
 call plug#end()
 
 "== autosave.vim ==
@@ -195,3 +202,8 @@ source ~/.config/nvim/vimspector.vim
 "== vim-startify
 source ~/.config/nvim/startify.vim
 
+"== asynctasks
+source ~/.config/nvim/asynctasks.vim
+
+"== neoformat
+source ~/.config/nvim/neoformat.vim
