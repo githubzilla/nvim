@@ -14,3 +14,7 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fs <cmd>Telescope grep_string<cr>
 nnoremap <expr> <leader>fS ':Telescope grep_string<cr>' . expand('<cword>')
+nnoremap <leader>fc <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <expr> <leader>fC ':Telescope current_buffer_fuzzy_find<cr>' . expand('<cword>')
+nnoremap <leader>ft <cmd>Telescope treesitter<cr>
+nnoremap <expr> <leader>fT ':Telescope treesitter<cr>' . expand('<cword>')

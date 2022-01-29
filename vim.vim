@@ -13,3 +13,7 @@ nnoremap <leader>e :Explore<CR>
 
 "== copy to clipboard
 map <F2> "*y
+
+"== search using smartcase
+set ignorecase
+set smartcase
