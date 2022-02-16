@@ -4,8 +4,8 @@ set number relativenumber
 "== highlight the word at cursor in obvious way
 set termguicolors
 "== expand tab to space
-set expandtab
-set shiftwidth=4
+"set expandtab
+"set shiftwidth=4
 "== mouse 
 set mouse=a
 
@@ -101,6 +101,7 @@ Plug 'nvim-lua/plenary.nvim'
 "Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make' }
 "Plug 'ray-x/navigator.lua'
 
+
 " vimspector
 Plug 'puremourning/vimspector'
 
@@ -129,6 +130,15 @@ Plug 'skywind3000/asyncrun.vim'
 
 "== neoformat
 Plug 'sbdchd/neoformat'
+
+"== markdown-preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+"== grammer check
+Plug 'rhysd/vim-grammarous'
+
+"== editorconfig
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
@@ -208,3 +218,6 @@ source ~/.config/nvim/asynctasks.vim
 
 "== neoformat
 source ~/.config/nvim/neoformat.vim
+
+"== grammerous
+source ~/.config/nvim/vim-grammarous.vim

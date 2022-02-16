@@ -182,4 +182,8 @@ require'lspconfig'.tsserver.setup{
     }
 }
 
-EOF
+require'lspconfig'.jdtls.setup{
+  on_attach=on_attach,
+  cmd = {"jdt-language-server"},
+  root_dir = require'lspconfig/util'.root_pattern(".git", "pom.xml"),
+}
