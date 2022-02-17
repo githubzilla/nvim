@@ -1,1 +1,1 @@
-nnoremap <F5> :LocalHistoryToggle<CR>
+"nnoremap <F5> :LocalHistoryToggle<CR>

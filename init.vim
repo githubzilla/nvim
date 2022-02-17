@@ -71,7 +71,7 @@ Plug 'aklt/plantuml-syntax'
 Plug 'justinmk/vim-sneak'
 
 "== file local history
-Plug 'dinhhuy258/vim-local-history', {'branch': 'master', 'do': ':UpdateRemotePlugins'}
+Plug 'mbbill/undotree'
 
 "== rust-tools
 " Collection of common configurations for the Nvim LSP client
@@ -221,3 +221,6 @@ source ~/.config/nvim/neoformat.vim
 
 "== grammerous
 source ~/.config/nvim/vim-grammarous.vim
+
+"== undotree
+source ~/.config/nvim/undotree.vim
