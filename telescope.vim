@@ -1,5 +1,11 @@
 " Load extensions
 lua <<EOF
+require('telescope').setup{
+  defaults = {
+    layout_strategy = 'horizontal',
+    layout_config = { width = 0.98, height = 0.99 }
+  }
+}
 require('telescope').load_extension('live_grep_raw')
 require('telescope').load_extension('fzf')
 EOF

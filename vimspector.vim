@@ -1,7 +1,7 @@
 let g:vimspector_enable_mappings = 'HUMAN'
-nmap <leader>dd :call vimspector#Launch()<CR>
-nmap <leader>dx :VimspectorReset<CR>
-nmap <leader>de :VimspectorEval
-nmap <leader>dw :VimspectorWatch
-nmap <leader>do :VimspectorShowOutput
+nnoremap <leader>dl :call vimspector#Launch()<CR>
+nnoremap <leader>dx :VimspectorReset<CR>
+nnoremap <leader>de :VimspectorEval
+nnoremap <leader>dw :VimspectorWatch
+nnoremap <leader>do :VimspectorShowOutput
 let g:vimspector_install_gadgets = [ 'CodeLLDB' ]
