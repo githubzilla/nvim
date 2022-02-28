@@ -24,6 +24,7 @@ nnoremap <leader>fc <cmd>Telescope current_buffer_fuzzy_find<cr>
 nnoremap <expr> <leader>fC ':Telescope current_buffer_fuzzy_find<cr>' . expand('<cword>')
 nnoremap <leader>ft <cmd>Telescope treesitter<cr>
 nnoremap <expr> <leader>fT ':Telescope treesitter<cr>' . expand('<cword>')
+nnoremap <leader>di <cmd>Telescope diagnostics<cr>
 " lsp
 nnoremap <leader>lds <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <expr> <leader>ldS ':Telescope lsp_document_symbols<cr>' . expand('<cword>')

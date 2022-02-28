@@ -73,6 +73,9 @@ Plug 'justinmk/vim-sneak'
 "== file local history
 Plug 'mbbill/undotree'
 
+"== vim-clang-format
+Plug 'rhysd/vim-clang-format'
+
 "== rust-tools
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
@@ -95,12 +98,9 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 " Debug -- don't use dap, it's kind of premature
-"Plug 'mfussenegger/nvim-dap'
-"Plug 'rcarriga/nvim-dap-ui'
-" navigator - conflict with other lsp plugins
-"Plug 'ray-x/guihua.lua', {'do': 'cd lua/fzy && make' }
-"Plug 'ray-x/navigator.lua'
 
+"== lsp status - not work!
+"Plug 'nvim-lua/lsp-status.nvim'
 
 " vimspector
 Plug 'puremourning/vimspector'
@@ -127,9 +127,6 @@ Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 "== tasks
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
-
-"== neoformat
-Plug 'sbdchd/neoformat'
 
 "== markdown-preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
@@ -216,8 +213,8 @@ source ~/.config/nvim/startify.vim
 "== asynctasks
 source ~/.config/nvim/asynctasks.vim
 
-"== neoformat
-source ~/.config/nvim/neoformat.vim
+"== vim-clang-format
+source ~/.config/nvim/vim-clang-format.vim
 
 "== grammerous
 source ~/.config/nvim/vim-grammarous.vim
