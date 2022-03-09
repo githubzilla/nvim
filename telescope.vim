@@ -1,9 +1,19 @@
 " Load extensions
 lua <<EOF
+local actions = require "telescope.actions"
 require('telescope').setup{
   defaults = {
     layout_strategy = 'horizontal',
     layout_config = { width = 0.98, height = 0.99 }
+  },
+  pickers = {
+    buffers = {
+      mappings = {
+        i = {
+          ["<c-x>"] = actions.delete_buffer + actions.move_to_top,
+        }
+      }
+    }
   }
 }
 require('telescope').load_extension('live_grep_raw')
