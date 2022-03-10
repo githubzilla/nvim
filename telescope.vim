@@ -4,7 +4,7 @@ local actions = require "telescope.actions"
 require('telescope').setup{
   defaults = {
     layout_strategy = 'horizontal',
-    layout_config = { width = 0.98, height = 0.99 }
+    layout_config = { width = 0.98, height = 0.99, preview_width = 0.5 }
   },
   pickers = {
     buffers = {
@@ -21,7 +21,7 @@ require('telescope').load_extension('fzf')
 EOF
 
 " set line number for previewer
-autocmd User TelescopePreviewerLoaded setlocal number
+"autocmd User TelescopePreviewerLoaded setlocal number
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--no-ignore-vcs,--files<cr>
 nnoremap <expr> <leader>fF ':Telescope find_files find_command=rg,--no-ignore-vcs,--files prompt_prefix=🔍<cr>' . expand('<cword>')
