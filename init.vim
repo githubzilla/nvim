@@ -137,6 +137,9 @@ Plug 'rhysd/vim-grammarous'
 "== editorconfig
 Plug 'editorconfig/editorconfig-vim'
 
+"== vim-diffchanges
+Plug 'jmcantrell/vim-diffchanges'
+
 call plug#end()
 
 "== autosave.vim ==

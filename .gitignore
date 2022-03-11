@@ -6,3 +6,4 @@ $HOME
 .netrwhist
 .undodir
 session
+*.patch
