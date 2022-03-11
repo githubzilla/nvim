@@ -17,16 +17,9 @@ Plug 'mhinz/vim-startify'
 "== autosave
 Plug '907th/vim-auto-save'
 
-"== nerdtree
-Plug 'preservim/nerdtree'
-
 "== ranger.vim
 Plug 'rbgrouleff/bclose.vim'
 Plug 'francoiscabrol/ranger.vim'
-
-"== nvim-tree
-"Plug 'kyazdani42/nvim-web-devicons'  for file icons
-"Plug 'kyazdani42/nvim-tree.lua'
 
 "== vim-airline
 Plug 'vim-airline/vim-airline'
@@ -37,7 +30,7 @@ Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'preservim/nerdcommenter'
 
 "== autopair
-Plug 'chun-yang/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
 "== tabular
 Plug 'godlygeek/tabular'
@@ -147,12 +140,6 @@ source ~/.config/nvim/autosave.vim
 
 "== vim-airline.vim ==
 source ~/.config/nvim/vim-airline.vim
-
-"== nerdtree
-source ~/.config/nvim/nerdtree.vim
-
-"== nvim tree ==
-"source ~/.config/nvim/nvim-tree.vim
 
 "== ranger.vim ==
 source ~/.config/nvim/ranger.vim
