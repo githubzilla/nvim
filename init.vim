@@ -55,7 +55,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 "== lsp signature, disabled since it not work under coc.vim
-Plug 'ray-x/lsp_signature.nvim'
+"Plug 'ray-x/lsp_signature.nvim'
 
 "Plug plantuml-syntax
 Plug 'aklt/plantuml-syntax'
@@ -76,16 +76,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 " LSP completion source for nvim-cmp
 Plug 'hrsh7th/cmp-nvim-lsp'
-" Snippet completion source for nvim-cmp
-Plug 'hrsh7th/cmp-vsnip'
 " Other usefull completion sources
 Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-buffer'
-" See hrsh7th's other plugins for more completion sources!
-" To enable more of the features of rust-analyzer, such as inlay hints and more!
-Plug 'simrat39/rust-tools.nvim'
-" Snippet engine
-Plug 'hrsh7th/vim-vsnip'
 " Fuzzy finder
 " Optional
 Plug 'nvim-lua/popup.nvim'
@@ -99,7 +91,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'puremourning/vimspector'
 
 "== rust.vim
-Plug 'rust-lang/rust.vim'
+"Plug 'rust-lang/rust.vim'
 
 "== which key
 Plug 'folke/which-key.nvim'
@@ -112,10 +104,6 @@ Plug 'liuchengxu/vista.vim'
 
 "== unimpaired
 Plug 'tpope/vim-unimpaired'
-
-"== vim-clap
-" Build the extra binary if cargo exists on your system.
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 
 "== tasks
 Plug 'skywind3000/asynctasks.vim'
@@ -162,23 +150,11 @@ source ~/.config/nvim/sneak.vim
 "== mundo ==
 source ~/.config/nvim/localhistory.vim
 
-"== rust-tools.vim
-source ~/.config/nvim/rust-tools.vim
-
 "== nvim-lspconfig
 source ~/.config/nvim/lspconfig.vim
 
-"== lsp signature
-source ~/.config/nvim/lsp_signature.vim
-
 "== nvim-cmp.vim
 source ~/.config/nvim/nvim-cmp.vim
-
-"== navigator.vim
-"source ~/.config/nvim/navigator.vim
-
-"== ccls.vim
-"source ~/.config/nvim/ccls.vim
 
 "==basic vim settings in vim.vim ==
 source ~/.config/nvim/vim.vim
@@ -186,14 +162,9 @@ source ~/.config/nvim/vim.vim
 "== which key
 source ~/.config/nvim/which_key.vim
 
-"== ctrlspace
-"source ~/.config/nvim/vim-ctrlspace.vim
-
 "== vista
 source ~/.config/nvim/vista.vim
 
-"== vim-dap-ui
-"source ~/.config/nvim/dapui.vim
 "== vimspector
 source ~/.config/nvim/vimspector.vim
 
