@@ -1,3 +1,7 @@
+set foldlevel=20
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
   ensure_installed = {"rust", "c", "cpp", "javascript", "css", "html"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -26,3 +30,4 @@ require'nvim-treesitter.configs'.setup {
 }
 require("nvim-treesitter").statusline()
 EOF
+

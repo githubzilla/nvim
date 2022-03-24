@@ -55,7 +55,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 "== lsp signature, disabled since it not work under coc.vim
-"Plug 'ray-x/lsp_signature.nvim'
+Plug 'ray-x/lsp_signature.nvim'
 
 "Plug plantuml-syntax
 Plug 'aklt/plantuml-syntax'
@@ -120,6 +120,9 @@ Plug 'editorconfig/editorconfig-vim'
 
 "== vim-diffchanges
 Plug 'jmcantrell/vim-diffchanges'
+
+"== fugitive
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
