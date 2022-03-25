@@ -1,6 +1,7 @@
-set foldlevel=20
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+"Enable treesitter fold can make clang-format extremely slo
+"set foldlevel=5
+"set foldmethod=expr
+"set foldexpr=nvim_treesitter#foldexpr()
 
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
@@ -28,6 +29,11 @@ require'nvim-treesitter.configs'.setup {
     },
   },
 }
-require("nvim-treesitter").statusline()
+--require("nvim-treesitter").statusline{
+--    indicator_size = 100,
+--    type_patterns = {'class', 'function', 'method'},
+--    transform_fn = function(line) return line:gsub('%s*[%[%(%{]*%s*$', '') end,
+--    separator = ' -> '
+--}
 EOF
 
