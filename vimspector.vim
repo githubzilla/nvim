@@ -1,3 +1,4 @@
+let g:vimspector_ui_mode = 'horizontal'
 let g:vimspector_enable_mappings = 'HUMAN'
 nnoremap <leader>dl :call vimspector#Launch()<CR>
 nnoremap <leader>dx :VimspectorReset<CR>
