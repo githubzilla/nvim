@@ -17,3 +17,7 @@ map <F2> "*y
 "== search using smartcase
 set ignorecase
 set smartcase
+
+"== ident
+filetype indent on
+filetype plugin indent on

@@ -17,3 +17,4 @@ hi Normal       ctermbg=NONE guibg=NONE
 hi SignColumn   ctermbg=235 guibg=#262626
 hi LineNr       ctermfg=grey guifg=grey ctermbg=NONE guibg=NONE
 hi CursorLineNr ctermbg=green guibg=green ctermfg=178 guifg=#d7af00
+hi CursorLine cterm=underline gui=underline

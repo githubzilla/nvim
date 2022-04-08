@@ -53,6 +53,7 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 "== treesitter, disabled since it's not work under coc.vim
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+"Plug 'nvim-treesitter/playground'
 
 "== lsp signature, disabled since it not work under coc.vim
 Plug 'ray-x/lsp_signature.nvim'
@@ -68,6 +69,13 @@ Plug 'mbbill/undotree'
 
 "== vim-clang-format
 Plug 'rhysd/vim-clang-format'
+
+"== neoformat -- Don't use neoformat, it didn't honor clang-format
+"--style=file
+"Plug 'sbdchd/neoformat'
+
+"== nvim-lint
+Plug 'mfussenegger/nvim-lint'
 
 "== rust-tools
 " Collection of common configurations for the Nvim LSP client
@@ -151,7 +159,7 @@ source ~/.config/nvim/treesitter.vim
 source ~/.config/nvim/sneak.vim
 
 "== mundo ==
-source ~/.config/nvim/localhistory.vim
+"source ~/.config/nvim/localhistory.vim
 
 "== nvim-lspconfig
 source ~/.config/nvim/lspconfig.vim
@@ -177,8 +185,14 @@ source ~/.config/nvim/startify.vim
 "== asynctasks
 source ~/.config/nvim/asynctasks.vim
 
+"== nvim-lint
+source ~/.config/nvim/nvim-lint.vim
+
 "== vim-clang-format
 source ~/.config/nvim/vim-clang-format.vim
+
+"== neoformat
+"source ~/.config/nvim/neoformat.vim
 
 "== grammerous
 source ~/.config/nvim/vim-grammarous.vim
