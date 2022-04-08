@@ -5,7 +5,7 @@ require('lint').linters_by_ft = {
 }
 require('lint.linters.cpplint').args = {
   '--linelength=80',
-  '--filter=-readability/braces,-whitespace/braces,-whitespace/comments,-whitespace/indent,-whitespace/newline,-whitespace/operators,-whitespace/parens',
+  '--filter=-readability/braces,-whitespace/braces,-whitespace/comments,-whitespace/indent,-whitespace/newline,-whitespace/operators,-whitespace/parens,-build/include_subdir',
 }
 EOF
 
