@@ -1,4 +1,6 @@
+
 syntax on
+
 "== show relative line number
 set number relativenumber
 "== highlight the word at cursor in obvious way
@@ -6,7 +8,7 @@ set termguicolors
 "== expand tab to space
 "set expandtab
 "set shiftwidth=4
-"== mouse 
+"== mouse
 set mouse=a
 
 call plug#begin()
@@ -158,9 +160,6 @@ source ~/.config/nvim/treesitter.vim
 "== sneak ==
 source ~/.config/nvim/sneak.vim
 
-"== mundo ==
-"source ~/.config/nvim/localhistory.vim
-
 "== nvim-lspconfig
 source ~/.config/nvim/lspconfig.vim
 
@@ -175,6 +174,7 @@ source ~/.config/nvim/which_key.vim
 
 "== vista
 source ~/.config/nvim/vista.vim
+
 
 "== vimspector
 source ~/.config/nvim/vimspector.vim
