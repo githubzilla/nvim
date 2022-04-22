@@ -64,7 +64,10 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'aklt/plantuml-syntax'
 
 "== sneak
-Plug 'justinmk/vim-sneak'
+"Plug 'justinmk/vim-sneak'
+
+"== hop.vim
+Plug 'phaazon/hop.nvim'
 
 "== file local history
 Plug 'mbbill/undotree'
@@ -158,7 +161,10 @@ source ~/.config/nvim/telescope.vim
 source ~/.config/nvim/treesitter.vim
 
 "== sneak ==
-source ~/.config/nvim/sneak.vim
+"source ~/.config/nvim/sneak.vim
+
+"== hop.nvim ==
+source ~/.config/nvim/hop.vim
 
 "== nvim-lspconfig
 source ~/.config/nvim/lspconfig.vim
