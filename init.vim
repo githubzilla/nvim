@@ -116,7 +116,7 @@ Plug 'liuchengxu/vista.vim'
 "Plug 'vim-ctrlspace/vim-ctrlspace'
 
 "== unimpaired
-Plug 'tpope/vim-unimpaired'
+"Plug 'tpope/vim-unimpaired'
 
 "== tasks
 Plug 'skywind3000/asynctasks.vim'
