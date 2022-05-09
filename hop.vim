@@ -19,6 +19,7 @@ EOF
         nmap L :HopWordCurrentLineAC<CR>
         "char anywhere
         nmap f :HopChar1<CR>
+        nmap F :HopChar2<CR>
         "pattern anywhere
         nmap s :HopPattern<CR>
     "visual
@@ -32,5 +33,6 @@ EOF
         vmap L <cmd>HopWordCurrentLineAC<CR>
         "char anywhere
         vmap f <cmd>HopChar1<CR>
+        vmap F :HopChar2<CR>
         "pattern anywhere
         vmap s <cmd>HopPattern<CR>
