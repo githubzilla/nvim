@@ -40,7 +40,7 @@ Plug 'godlygeek/tabular'
 "== markdown
 Plug 'tpope/vim-markdown'
 "== markdown-preview
-Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'JamshedVesuna/vim-markdown-preview', { 'do': { -> mkdp#util#install() }}
 "== open-browser
 Plug 'tyru/open-browser.vim'
 
