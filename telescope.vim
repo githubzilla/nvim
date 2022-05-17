@@ -20,8 +20,10 @@ require('telescope').load_extension('live_grep_raw')
 require('telescope').load_extension('fzf')
 EOF
 
-" set line number for previewer
+" Set line number for previewer
 autocmd User TelescopePreviewerLoaded setlocal number
+" Underline the cursor line
+autocmd User TelescopePreviewerLoaded setlocal cursorline
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--no-ignore-vcs,--files<cr>
 nnoremap <expr> <leader>fF ':Telescope find_files find_command=rg,--no-ignore-vcs,--files prompt_prefix=🔍<cr>' . expand('<cword>')
