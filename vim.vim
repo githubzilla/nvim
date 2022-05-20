@@ -21,3 +21,7 @@ set smartcase
 "== ident
 filetype indent on
 filetype plugin indent on
+
+"== mouse, The you can press :, select text for the system,
+"and press Esc to go back to Vim using the mouse events.
+set mouse=nvi
