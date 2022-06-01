@@ -47,12 +47,6 @@ Plug 'tyru/open-browser.vim'
 "== dash
 Plug 'rizzatti/dash.vim'
 
-"== telescope
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-live-grep-raw.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-
 "== treesitter, disabled since it's not work under coc.vim
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 "Plug 'nvim-treesitter/playground'
@@ -137,6 +131,15 @@ Plug 'jmcantrell/vim-diffchanges'
 "== fugitive
 Plug 'tpope/vim-fugitive'
 
+"== lazygit
+Plug 'kdheepak/lazygit.nvim'
+
+"== telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-live-grep-raw.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
 call plug#end()
 
 "== autosave.vim ==
@@ -205,3 +208,6 @@ source ~/.config/nvim/vim-grammarous.vim
 
 "== undotree
 source ~/.config/nvim/undotree.vim
+
+"== lazygit
+source ~/.config/nvim/lazygit.vim
