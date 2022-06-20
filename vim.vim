@@ -25,3 +25,6 @@ filetype plugin indent on
 "== mouse, The you can press :, select text for the system,
 "and press Esc to go back to Vim using the mouse events.
 set mouse=nvi
+
+"== enter read only mode when swp file found
+autocmd SwapExists * let v:swapchoice = "o"
