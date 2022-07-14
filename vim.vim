@@ -1,10 +1,15 @@
 "== tabline navigation ==
 nnoremap <c-S-tab> :bprevious<CR>
 nnoremap <c-tab>   :bnext<CR>
+"== quickfix navigation ==
+nnoremap <leader>qn :cn<CR><ESC>
+nnoremap <leader>qp :cp<CR><ESC>
+"== buffer navigation
 nnoremap <leader>bf :buffers<CR>:buffer  
 nnoremap <leader>bd :bd<CR>
 "== press Ctrl-J whenever you want to split a line ==
 nnoremap <NL> i<CR><ESC>
+nnoremap <NL> j<CR><ESC>
 "== netrw ==
 nnoremap <leader>e :Explore<CR>
 
