@@ -5,4 +5,5 @@ nnoremap <leader>dx :VimspectorReset<CR>
 nnoremap <leader>de :VimspectorEval
 nnoremap <leader>dw :VimspectorWatch
 nnoremap <leader>do :VimspectorShowOutput
+nnoremap <Leader>db :VimspectorBreakpoints
 let g:vimspector_install_gadgets = [ 'CodeLLDB' ]
