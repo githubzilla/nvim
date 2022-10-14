@@ -43,7 +43,7 @@ local on_attach = function(client, bufnr)
 end
 
 require'lspconfig'.clangd.setup{
-    cmd = {"/usr/local/Cellar/llvm/13.0.1_1/bin/clangd", "--background-index", "--compile-commands-dir="..working_dir, "--enable-config", "--header-insertion=never"},
+    cmd = {"/opt/homebrew/opt/llvm/bin/clangd", "--background-index", "--compile-commands-dir="..working_dir, "--enable-config", "--header-insertion=never"},
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
