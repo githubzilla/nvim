@@ -1,6 +1,12 @@
 " Load extensions
 lua <<EOF
+require("telescope").load_extension("live_grep_args")
+require('telescope').load_extension('fzf')
+require('telescope').load_extension('lazygit')
+
 local actions = require "telescope.actions"
+local lga_actions = require("telescope-live-grep-args.actions")
+
 require('telescope').setup{
   defaults = {
     layout_strategy = 'horizontal',
@@ -12,14 +18,12 @@ require('telescope').setup{
         i = {
           ["<c-x>"] = actions.delete_buffer + actions.move_to_top,
 	  ["<c-q>"] = actions.smart_add_to_qflist + actions.open_qflist, 
+	  ["<c-k>"] = lga_actions.quote_prompt(),
         }
       }
     }
   }
 }
-require('telescope').load_extension('live_grep_raw')
-require('telescope').load_extension('fzf')
-require('telescope').load_extension('lazygit')
 EOF
 
 " Set line number for previewer
@@ -31,7 +35,7 @@ nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--no-ignore-vcs,--
 nnoremap <leader>fF :execute 'Telescope find_files find_command=rg,--no-ignore-vcs,--files prompt_prefix=🔍 default_text=' . "" . expand('<cword>')<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep vimgrep_arguments=rg,--no-ignore-vcs,--no-heading,--with-filename,--line-number,--column<cr>
 nnoremap <leader>fG :execute 'Telescope live_grep vimgrep_arguments=rg,--no-ignore-vcs,--no-heading,--with-filename,--line-number,--column default_text=' . "" . expand('<cword>')<cr>
-nnoremap <leader>fr <cmd>Telescope live_grep_raw<cr>
+nnoremap <leader>fr <cmd>Telescope live_grep_args<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>fs <cmd>Telescope grep_string<cr>
