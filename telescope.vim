@@ -46,8 +46,8 @@ nnoremap <leader>ft <cmd>Telescope treesitter<cr>
 nnoremap <expr> <leader>fT ':Telescope treesitter<cr>' . expand('<cword>')
 nnoremap <leader>di <cmd>Telescope diagnostics<cr>
 " lsp
-nnoremap <leader>ld <cmd>Telescope lsp_document_symbols<cr>
-nnoremap <expr> <leader>lD ':Telescope lsp_document_symbols<cr>' . expand('<cword>')
-nnoremap <leader>lw <cmd>Telescope lsp_dynamic_workspace_symbols<cr>
-nnoremap <expr> <leader>lW ':Telescope lsp_dynamic_workspace_symbols<cr>' . expand('<cword>')
+nnoremap <leader>ld <cmd>Telescope lsp_document_symbols show_line=true<cr>
+nnoremap <expr> <leader>lD ':Telescope lsp_document_symbols show_line=true<cr>' . expand('<cword>')
+nnoremap <leader>lw <cmd>Telescope lsp_dynamic_workspace_symbols show_line=true<cr>
+nnoremap <expr> <leader>lW ':Telescope lsp_dynamic_workspace_symbols show_line=true<cr>' . expand('<cword>')
 nnoremap <leader>lr <cmd>Telescope lsp_references<cr>
