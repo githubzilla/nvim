@@ -1,5 +1,5 @@
 let g:neoformat_cpp_clangformat = {
-    \ 'exe': 'clang-format',
+    \ 'exe': '/usr/bin/clang-format-15',
     \ 'args': ['--style=file']
 \}
 let g:neoformat_enabled_cpp = ['clangformat']
