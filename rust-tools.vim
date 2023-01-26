@@ -1,80 +1,178 @@
-" Set completeopt to have a better completion experience
-" :help completeopt
-" menuone: popup even when there's only one match
-" noinsert: Do not insert text until a selection is made
-" noselect: Do not select, force user to select one from the menu
-set completeopt=menuone,noinsert,noselect
+lua <<EOF
+local opts = {
+  tools = { -- rust-tools options
 
-" Avoid showing extra messages when using completion
-set shortmess+=c
+    -- how to execute terminal commands
+    -- options right now: termopen / quickfix
+    executor = require("rust-tools.executors").termopen,
 
-" rust-tools setup combined into lspconfig.=vim
+    -- callback to execute once rust-analyzer is done initializing the workspace
+    -- The callback receives one parameter indicating the `health` of the server: "ok" | "warning" | "error"
+    on_initialized = nil,
 
-" Configure LSP through rust-tools.nvim plugin.
-" rust-tools will configure and enable certain LSP features for us.
-" See https://github.com/simrat39/rust-tools.nvim#configuration
-"lua <<EOF
-"require('rust-tools').setup()
-"EOF
+    -- automatically call RustReloadWorkspace when writing to a Cargo.toml file.
+    reload_workspace_from_cargo_toml = true,
 
-" Setup Completion
-" See https://github.com/hrsh7th/nvim-cmp#basic-configuration
-"lua <<EOF
-"local cmp = require'cmp'
-"cmp.setup({
-  "-- Enable LSP snippets
-  "snippet = {
-    "expand = function(args)
-        "vim.fn["vsnip#anonymous"](args.body)
-    "end,
-  "},
-  "mapping = {
-    "['<C-p>'] = cmp.mapping.select_prev_item(),
-    "['<C-n>'] = cmp.mapping.select_next_item(),
-    "-- Add tab support
-    "['<S-Tab>'] = cmp.mapping.select_prev_item(),
-    "['<Tab>'] = cmp.mapping.select_next_item(),
-    "['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    "['<C-f>'] = cmp.mapping.scroll_docs(4),
-    "['<C-Space>'] = cmp.mapping.complete(),
-    "['<C-e>'] = cmp.mapping.close(),
-    "['<CR>'] = cmp.mapping.confirm({
-      "behavior = cmp.ConfirmBehavior.Insert,
-      "select = true,
-    "})
-  "},
+    -- These apply to the default RustSetInlayHints command
+    inlay_hints = {
+      -- automatically set inlay hints (type hints)
+      -- default: true
+      auto = true,
 
-  "-- Installed sources
-  "sources = {
-    "{ name = 'nvim_lsp' },
-    "{ name = 'vsnip' },
-    "{ name = 'path' },
-    "{ name = 'buffer' },
-  "},
-"})
-"EOF
+      -- Only show inlay hints for the current line
+      only_current_line = false,
 
-" Code navigation shortcuts
-"nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
-"nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
-"nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
-"nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
-"nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
-"nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
-"nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
-"nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
-"nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
+      -- whether to show parameter hints with the inlay hints or not
+      -- default: true
+      show_parameter_hints = true,
 
-" Code action
-"nnoremap <silent> ga    <cmd>lua vim.lsp.buf.code_action()<CR>
+      -- prefix for parameter hints
+      -- default: "<-"
+      parameter_hints_prefix = "<- ",
 
-" Set updatetime for CursorHold
-" 300ms of no cursor movement to trigger CursorHold
-"set updatetime=300
-" Show diagnostic popup on cursor hold
-"autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+      -- prefix for all the other hints (type, chaining)
+      -- default: "=>"
+      other_hints_prefix = "=> ",
 
-" Goto previous/next diagnostic warning/error
-"nnoremap <silent> g[ <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
-"nnoremap <silent> g] <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+      -- whether to align to the length of the longest line in the file
+      max_len_align = false,
 
+      -- padding from the left if max_len_align is true
+      max_len_align_padding = 1,
+
+      -- whether to align to the extreme right or not
+      right_align = false,
+
+      -- padding from the right if right_align is true
+      right_align_padding = 7,
+
+      -- The color of the hints
+      highlight = "Comment",
+    },
+
+    -- options same as lsp hover / vim.lsp.util.open_floating_preview()
+    hover_actions = {
+
+      -- the border that is used for the hover window
+      -- see vim.api.nvim_open_win()
+      border = {
+        { "╭", "FloatBorder" },
+        { "─", "FloatBorder" },
+        { "╮", "FloatBorder" },
+        { "│", "FloatBorder" },
+        { "╯", "FloatBorder" },
+        { "─", "FloatBorder" },
+        { "╰", "FloatBorder" },
+        { "│", "FloatBorder" },
+      },
+
+      -- Maximal width of the hover window. Nil means no max.
+      max_width = nil,
+
+      -- Maximal height of the hover window. Nil means no max.
+      max_height = nil,
+
+      -- whether the hover action window gets automatically focused
+      -- default: false
+      auto_focus = false,
+    },
+
+    -- settings for showing the crate graph based on graphviz and the dot
+    -- command
+    crate_graph = {
+      -- Backend used for displaying the graph
+      -- see: https://graphviz.org/docs/outputs/
+      -- default: x11
+      backend = "x11",
+      -- where to store the output, nil for no output stored (relative
+      -- path from pwd)
+      -- default: nil
+      output = nil,
+      -- true for all crates.io and external crates, false only the local
+      -- crates
+      -- default: true
+      full = true,
+
+      -- List of backends found on: https://graphviz.org/docs/outputs/
+      -- Is used for input validation and autocompletion
+      -- Last updated: 2021-08-26
+      enabled_graphviz_backends = {
+        "bmp",
+        "cgimage",
+        "canon",
+        "dot",
+        "gv",
+        "xdot",
+        "xdot1.2",
+        "xdot1.4",
+        "eps",
+        "exr",
+        "fig",
+        "gd",
+        "gd2",
+        "gif",
+        "gtk",
+        "ico",
+        "cmap",
+        "ismap",
+        "imap",
+        "cmapx",
+        "imap_np",
+        "cmapx_np",
+        "jpg",
+        "jpeg",
+        "jpe",
+        "jp2",
+        "json",
+        "json0",
+        "dot_json",
+        "xdot_json",
+        "pdf",
+        "pic",
+        "pct",
+        "pict",
+        "plain",
+        "plain-ext",
+        "png",
+        "pov",
+        "ps",
+        "ps2",
+        "psd",
+        "sgi",
+        "svg",
+        "svgz",
+        "tga",
+        "tiff",
+        "tif",
+        "tk",
+        "vml",
+        "vmlz",
+        "wbmp",
+        "webp",
+        "xlib",
+        "x11",
+      },
+    },
+  },
+
+  -- all the opts to send to nvim-lspconfig
+  -- these override the defaults set by rust-tools.nvim
+  -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
+  server = {
+    -- standalone file support
+    -- setting it to false may improve startup time
+    standalone = true,
+  }, -- rust-analyzer options
+
+  -- debugging stuff
+  dap = {
+    adapter = {
+      type = "executable",
+      command = "lldb-vscode",
+      name = "rt_lldb",
+    },
+  },
+}
+
+require('rust-tools').setup(opts)
+EOF

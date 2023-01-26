@@ -79,6 +79,7 @@ Plug 'mfussenegger/nvim-lint'
 "== rust-tools
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
+Plug 'simrat39/rust-tools.nvim'
 " Completion framework
 Plug 'hrsh7th/nvim-cmp'
 " LSP completion source for nvim-cmp
@@ -171,6 +172,9 @@ source ~/.config/nvim/hop.vim
 
 "== nvim-lspconfig
 source ~/.config/nvim/lspconfig.vim
+
+"== rust-tools
+source ~/.config/nvim/rust-tools.vim
 
 "== nvim-cmp.vim
 source ~/.config/nvim/nvim-cmp.vim
