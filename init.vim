@@ -67,11 +67,10 @@ Plug 'phaazon/hop.nvim'
 Plug 'mbbill/undotree'
 
 "== vim-clang-format
-Plug 'rhysd/vim-clang-format'
+"Plug 'rhysd/vim-clang-format'
 
-"== neoformat -- Don't use neoformat, it didn't honor clang-format
-"--style=file
-"Plug 'sbdchd/neoformat'
+"== neoformat
+Plug 'sbdchd/neoformat'
 
 "== nvim-lint
 Plug 'mfussenegger/nvim-lint'
@@ -112,6 +111,9 @@ Plug 'liuchengxu/vista.vim'
 
 "== unimpaired
 "Plug 'tpope/vim-unimpaired'
+
+"== neomake
+Plug 'neomake/neomake'
 
 "== tasks
 Plug 'skywind3000/asynctasks.vim'
@@ -205,7 +207,7 @@ source ~/.config/nvim/nvim-lint.vim
 source ~/.config/nvim/vim-clang-format.vim
 
 "== neoformat
-"source ~/.config/nvim/neoformat.vim
+source ~/.config/nvim/neoformat.vim
 
 "== grammerous
 source ~/.config/nvim/vim-grammarous.vim
