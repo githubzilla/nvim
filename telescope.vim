@@ -11,7 +11,8 @@ require('telescope').setup{
   defaults = {
     layout_strategy = 'horizontal',
     layout_config = { width = 0.90, height = 0.90, preview_width = 0.5 },
-    path_display={"smart"}
+    path_display={"smart"},
+    file_ignore_patterns = {"bld"}
   },
   pickers = {
     buffers = {
