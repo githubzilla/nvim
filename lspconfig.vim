@@ -2,8 +2,8 @@
 hi LspReferenceText ctermbg=gray guibg=gray
 hi LspReferenceRead ctermbg=lightblue guibg=lightblue
 hi LspReferenceWrite ctermbg=lightgreen guibg=lightgreen
-autocmd CursorHold * lua vim.lsp.buf.document_highlight()
-autocmd CursorMoved * lua vim.lsp.buf.clear_references()
+"autocmd CursorHold * lua vim.lsp.buf.document_highlight()
+"autocmd CursorMoved * lua vim.lsp.buf.clear_references()
 
 lua << EOF
 local nvim_lsp = require('lspconfig')

@@ -13,6 +13,9 @@ set mouse=a
 
 call plug#begin()
 
+"== copilot
+Plug 'github/copilot.vim'
+
 "== vim-startify
 Plug 'mhinz/vim-startify'
 
