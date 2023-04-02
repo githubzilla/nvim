@@ -146,6 +146,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 call plug#end()
 
+"==copilot==
+source ~/.config/nvim/copilot.vim
+
 "== autosave.vim ==
 source ~/.config/nvim/autosave.vim
 
