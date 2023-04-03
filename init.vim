@@ -144,6 +144,9 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
+"== rnvimr
+Plug 'kevinhwang91/rnvimr'
+
 call plug#end()
 
 "==copilot==
@@ -191,7 +194,6 @@ source ~/.config/nvim/which_key.vim
 "== vista
 source ~/.config/nvim/vista.vim
 
-
 "== vimspector
 source ~/.config/nvim/vimspector.vim
 
@@ -218,3 +220,6 @@ source ~/.config/nvim/undotree.vim
 
 "== lazygit
 source ~/.config/nvim/lazygit.vim
+
+"== rnvimr
+source ~/.config/nvim/rnvimr.vim
