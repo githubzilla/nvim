@@ -23,4 +23,4 @@ let g:rnvimr_layout = {
             \ 'style': 'minimal'
             \ }
 
-nnoremap <silent> <Leader>fr :RnvimrToggle<CR>
+nnoremap <silent> <Leader>rf :RnvimrToggle<CR>
