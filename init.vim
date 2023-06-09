@@ -14,7 +14,7 @@ set mouse=a
 call plug#begin()
 
 "== copilot
-"Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 
 "== vim-startify
 Plug 'mhinz/vim-startify'
@@ -147,6 +147,9 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 "== rnvimr
 Plug 'kevinhwang91/rnvimr'
 
+"== codeium
+"Plug 'Exafunction/codeium.vim'
+
 call plug#end()
 
 "==copilot==
@@ -223,3 +226,6 @@ source ~/.config/nvim/lazygit.vim
 
 "== rnvimr
 source ~/.config/nvim/rnvimr.vim
+
+"== codeium
+source ~/.config/nvim/codeium.vim
