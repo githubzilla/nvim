@@ -8,8 +8,9 @@ nnoremap <leader>qp :cp<CR><ESC>
 nnoremap <leader>bf :buffers<CR>:buffer  
 nnoremap <leader>bd :bd<CR>
 "== press Ctrl-J whenever you want to split a line ==
-nnoremap <NL> i<CR><ESC>
-nnoremap <NL> j<CR><ESC>
+nnoremap <c-i> i<CR><ESC>
+nnoremap <c-j> :join!<CR><ESC>
+
 "== netrw ==
 nnoremap <leader>e :Explore<CR>
 
