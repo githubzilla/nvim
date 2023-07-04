@@ -34,3 +34,6 @@ set mouse=nvi
 
 "== enter read only mode when swp file found
 autocmd SwapExists * let v:swapchoice = "o"
+
+"== hi visual
+hi Visual term=reverse cterm=reverse guibg=Grey
