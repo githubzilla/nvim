@@ -125,7 +125,6 @@ Plug 'folke/which-key.nvim'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 
-
 "== grammer check
 Plug 'rhysd/vim-grammarous'
 
