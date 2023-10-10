@@ -14,6 +14,10 @@ nnoremap <c-j> :join!<CR><ESC>
 "== netrw ==
 nnoremap <leader>e :Explore<CR>
 
+"== switch buffer ==
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
+
 "== blink cursor ==
 :set guicursor=a:blinkon100
 
