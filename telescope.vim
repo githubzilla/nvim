@@ -12,7 +12,7 @@ require('telescope').setup{
     layout_strategy = 'horizontal',
     layout_config = { width = 0.90, height = 0.90, preview_width = 0.5 },
     path_display={"smart"},
-    file_ignore_patterns = {"bld"}
+    file_ignore_patterns = {"bld", "compile_commands*", "rocksdb_cloud_db"}
   },
   pickers = {
     buffers = {
