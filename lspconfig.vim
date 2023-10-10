@@ -43,7 +43,7 @@ local on_attach = function(client, bufnr)
 end
 
 require'lspconfig'.clangd.setup{
-cmd = {"/usr/bin/clangd-17", "--background-index", "--compile-commands-dir="..working_dir, "--enable-config", "--header-insertion=never"},
+cmd = {"/usr/bin/clangd-17", "--background-index", "--compile-commands-dir="..working_dir, "--enable-config", "--header-insertion=never", "--offset-encoding=utf-16"},
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
