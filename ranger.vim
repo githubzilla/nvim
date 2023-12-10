@@ -1,6 +1,23 @@
 "== ranger.vim ==
-let g:ranger_replace_netrw = 1 "use ranger instead of netrw when open a directory
-let g:ranger_map_keys = 0 "disabl featuree default ranger key binding
+lua <<EOF
+local ranger_nvim = require("ranger-nvim")
+ranger_nvim.setup{
+  enable_cmds = true,
+  replace_netrw = true,
+  keybinds = {
+    ["ov"] = ranger_nvim.OPEN_MODE.vsplit,
+    ["oh"] = ranger_nvim.OPEN_MODE.split,
+    ["ot"] = ranger_nvim.OPEN_MODE.tabedit,
+    ["or"] = ranger_nvim.OPEN_MODE.rifle,
+  },
+  ui = {
+    border = "single",
+    height = 0.8,
+    width = 0.8,
+    x = 0.5,
+    y = 0.5,
+  },
+}
+EOF
 
-nnoremap <Leader>rr :RangerCurrentFile<CR>
-nnoremap <Leader>rt :RangerCurrentFileNewTab<CR>
+nnoremap <Leader>rf :Ranger<CR>

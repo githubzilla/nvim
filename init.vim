@@ -23,8 +23,9 @@ Plug 'mhinz/vim-startify'
 Plug '907th/vim-auto-save'
 
 "== ranger.vim
-Plug 'rbgrouleff/bclose.vim'
-Plug 'francoiscabrol/ranger.vim'
+"Plug 'rbgrouleff/bclose.vim'
+"Plug 'francoiscabrol/ranger.vim'
+Plug 'kelly-lin/ranger.nvim'
 
 "== vim-airline
 Plug 'vim-airline/vim-airline'
@@ -144,9 +145,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
-"== rnvimr
-Plug 'kevinhwang91/rnvimr'
-
 "== codeium
 "Plug 'Exafunction/codeium.vim'
 
@@ -223,9 +221,6 @@ source ~/.config/nvim/undotree.vim
 
 "== lazygit
 source ~/.config/nvim/lazygit.vim
-
-"== rnvimr
-source ~/.config/nvim/rnvimr.vim
 
 "== codeium
 source ~/.config/nvim/codeium.vim
