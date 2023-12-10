@@ -49,5 +49,27 @@ cmd = {"/usr/bin/clangd-17", "--background-index", "--compile-commands-dir="..wo
       debounce_text_changes = 150,
     }
 }
+
+require'lspconfig'.rust_analyzer.setup{
+    on_attach=on_attach,
+    settings = {
+        ["rust-analyzer"] = {
+            imports = {
+                granularity = {
+                    group = "module",
+                },
+                prefix = "self",
+            },
+            cargo = {
+                buildScripts = {
+                    enable = true,
+                },
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    }
+}
 EOF
 
