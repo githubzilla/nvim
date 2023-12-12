@@ -144,6 +144,10 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-live-grep-args.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope-ui-select.nvim'
+
+"== auto-session
+Plug 'rmagatti/auto-session'
 
 "== codeium
 "Plug 'Exafunction/codeium.vim'
@@ -223,4 +227,7 @@ source ~/.config/nvim/undotree.vim
 source ~/.config/nvim/lazygit.vim
 
 "== codeium
-source ~/.config/nvim/codeium.vim
+"source ~/.config/nvim/codeium.vim
+
+"== auto-session
+source ~/.config/nvim/auto-session.vim
