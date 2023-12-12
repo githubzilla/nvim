@@ -1,6 +1,6 @@
 "== tabline navigation ==
-nnoremap <c-S-tab> :bprevious<CR>
-nnoremap <c-tab>   :bnext<CR>
+nnoremap <space>p :bprevious<CR>
+nnoremap <space>n :bnext<CR>
 "== quickfix navigation ==
 nnoremap <leader>qn :cn<CR><ESC>
 nnoremap <leader>qp :cp<CR><ESC>
