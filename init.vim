@@ -22,6 +22,9 @@ Plug 'mhinz/vim-startify'
 "== autosave
 Plug '907th/vim-auto-save'
 
+"== keep the window open when close buffer
+Plug 'rbgrouleff/bclose.vim'
+
 "== ranger.vim
 "Plug 'rbgrouleff/bclose.vim'
 "Plug 'francoiscabrol/ranger.vim'
