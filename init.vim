@@ -1,4 +1,3 @@
-
 syntax on
 
 "== show relative line number
@@ -154,6 +153,9 @@ Plug 'rmagatti/auto-session'
 "== codeium
 "Plug 'Exafunction/codeium.vim'
 
+"== orgmode
+Plug 'nvim-orgmode/orgmode'
+
 call plug#end()
 
 "==copilot==
@@ -233,3 +235,6 @@ source ~/.config/nvim/lazygit.vim
 
 "== auto-session
 source ~/.config/nvim/auto-session.vim
+
+"== orgmode
+source ~/.config/nvim/orgmode.vim
