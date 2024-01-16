@@ -1,5 +1,5 @@
 # init file for open large file for better performance
-# usage nvim -u large-filr.vim
+# usage nvim -u large-file.vim
 syntax off
 filetype off
 set noundofile
