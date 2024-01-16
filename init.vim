@@ -25,8 +25,6 @@ Plug '907th/vim-auto-save'
 Plug 'rbgrouleff/bclose.vim'
 
 "== ranger.vim
-"Plug 'rbgrouleff/bclose.vim'
-"Plug 'francoiscabrol/ranger.vim'
 Plug 'kelly-lin/ranger.nvim'
 
 "== vim-airline
@@ -43,10 +41,6 @@ Plug 'jiangmiao/auto-pairs'
 "== tabular
 Plug 'godlygeek/tabular'
 
-"== markdown
-Plug 'tpope/vim-markdown'
-"== markdown-preview
-Plug 'JamshedVesuna/vim-markdown-preview', { 'do': { -> mkdp#util#install() }}
 "== open-browser
 Plug 'tyru/open-browser.vim'
 
@@ -123,8 +117,6 @@ Plug 'liuchengxu/vista.vim'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 
-"== markdown-preview
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 "== grammer check
 Plug 'rhysd/vim-grammarous'
