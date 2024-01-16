@@ -153,8 +153,8 @@ Plug 'rmagatti/auto-session'
 "== codeium
 "Plug 'Exafunction/codeium.vim'
 
-"== orgmode
-Plug 'nvim-orgmode/orgmode'
+"== neorg
+Plug 'nvim-neorg/neorg'
 
 call plug#end()
 
@@ -236,5 +236,5 @@ source ~/.config/nvim/lazygit.vim
 "== auto-session
 source ~/.config/nvim/auto-session.vim
 
-"== orgmode
-source ~/.config/nvim/orgmode.vim
+"== neorg
+source ~/.config/nvim/neorg.vim
