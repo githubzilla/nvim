@@ -233,3 +233,6 @@ source ~/.config/nvim/auto-session.vim
 
 "== neorg
 source ~/.config/nvim/neorg.vim
+
+"== oil
+source ~/.config/nvim/oil.vim
