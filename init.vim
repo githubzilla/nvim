@@ -148,6 +148,9 @@ Plug 'rmagatti/auto-session'
 "== neorg
 Plug 'nvim-neorg/neorg'
 
+"== oil.nvim
+Plug 'stevearc/oil.nvim'
+
 call plug#end()
 
 "==copilot==
