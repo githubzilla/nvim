@@ -18,7 +18,8 @@ nnoremap <leader>e :Explore<CR>
 :set guicursor=a:blinkon100
 
 "== copy to clipboard
-map <F2> "*y
+vnoremap <F2> "+y
+nnoremap <F2> "+y
 
 "== search using smartcase
 set ignorecase
