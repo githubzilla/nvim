@@ -9,9 +9,11 @@ local lga_actions = require("telescope-live-grep-args.actions")
 
 require('telescope').setup{
   defaults = {
-    layout_strategy = 'horizontal',
-    layout_config = { width = 0.90, height = 0.90, preview_width = 0.5 },
-    path_display={"smart"},
+    layout_strategy = 'vertical',
+    -- layout_strategy = 'horizontal',
+    layout_config = { width = 0.90 },
+    -- layout_config = { width = 0.90, height = 0.90, preview_width = 0.5 },
+    path_display={"truncate"},
     file_ignore_patterns = {"bld*", "build*", "compile%_commands*", "rocksdb_cloud_db", "%.o", "%.a", "%.so", "%.cc.d"}
   },
   pickers = {
@@ -48,10 +50,10 @@ nnoremap <leader>ft <cmd>Telescope treesitter<cr>
 nnoremap <expr> <leader>fT ':Telescope treesitter<cr>' . expand('<cword>')
 nnoremap <leader>di <cmd>Telescope diagnostics<cr>
 " lsp
-nnoremap <leader>ld <cmd>Telescope lsp_document_symbols show_line=true<cr>
-nnoremap <expr> <leader>lD ':Telescope lsp_document_symbols show_line=true<cr>' . expand('<cword>')
-nnoremap <leader>lw <cmd>Telescope lsp_dynamic_workspace_symbols show_line=true<cr>
-nnoremap <expr> <leader>lW ':Telescope lsp_dynamic_workspace_symbols show_line=true<cr>' . expand('<cword>')
-nnoremap <leader>lr <cmd>Telescope lsp_references<cr>
+nnoremap <leader>ld <cmd>Telescope lsp_document_symbols fname_width=0.38 show_line=true<cr>
+nnoremap <expr> <leader>lD ':Telescope lsp_document_symbols fname_width=0.38 show_line=true<cr>' . expand('<cword>')
+nnoremap <leader>lw <cmd>Telescope lsp_dynamic_workspace_symbols fname_width=0.38 show_line=true<cr>
+nnoremap <expr> <leader>lW ':Telescope lsp_dynamic_workspace_symbols fname_width=0.38 show_line=true<cr>' . expand('<cword>')
+nnoremap <leader>lr <cmd>Telescope lsp_references fname_width=0.38<cr>
 " resume
 nnoremap <leader>tr <cmd> Telescope resume<cr>
