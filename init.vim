@@ -147,12 +147,13 @@ Plug 'rmagatti/auto-session'
 "== neorg
 Plug 'nvim-neorg/neorg'
 
-<<<<<<< HEAD
 "== oil.nvim
 Plug 'stevearc/oil.nvim'
 
-=======
->>>>>>> 5b8b866 (sync with cpp-linux branch)
+"== fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 call plug#end()
 
 "==copilot==
@@ -235,9 +236,6 @@ source ~/.config/nvim/auto-session.vim
 
 "== neorg
 source ~/.config/nvim/neorg.vim
-<<<<<<< HEAD
 
 "== oil
 source ~/.config/nvim/oil.vim
-=======
->>>>>>> 5b8b866 (sync with cpp-linux branch)
