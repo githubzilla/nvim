@@ -21,8 +21,8 @@ require('telescope').setup{
       mappings = {
         i = {
           ["<c-x>"] = actions.delete_buffer + actions.move_to_top,
-	  ["<c-q>"] = actions.smart_add_to_qflist + actions.open_qflist, 
-	  ["<c-k>"] = lga_actions.quote_prompt(),
+	        ["<c-q>"] = actions.smart_add_to_qflist + actions.open_qflist, 
+	        ["<c-k>"] = lga_actions.quote_prompt(),
         }
       }
     }

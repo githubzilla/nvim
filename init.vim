@@ -32,6 +32,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
+"== lualine for status line
+"Plug 'nvim-lualine/lualine.nvim'
+" If you want to have icons in your statusline choose one of these
+"Plug 'nvim-tree/nvim-web-devicons'
+
 "== nerdcommenter
 Plug 'preservim/nerdcommenter'
 
@@ -49,7 +54,7 @@ Plug 'rizzatti/dash.vim'
 
 "== treesitter, disabled since it's not work under coc.vim
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'nvim-treesitter/nvim-treesitter-context'
+"Plug 'nvim-treesitter/nvim-treesitter-context'
 "Plug 'nvim-treesitter/playground'
 
 "== lsp signature, disabled since it not work under coc.vim
@@ -80,6 +85,8 @@ Plug 'mfussenegger/nvim-lint'
 "== rust-tools
 " Collection of common configurations for the Nvim LSP client
 Plug 'neovim/nvim-lspconfig'
+"== show code context on status bar
+Plug 'SmiteshP/nvim-navic'
 " Completion framework
 Plug 'hrsh7th/nvim-cmp'
 " LSP completion source for nvim-cmp
@@ -161,6 +168,9 @@ source ~/.config/nvim/autosave.vim
 
 "== vim-airline.vim ==
 source ~/.config/nvim/vim-airline.vim
+
+"== lualine
+"source ~/.config/nvim/lualine.vim
 
 "== ranger.vim ==
 source ~/.config/nvim/ranger.vim
