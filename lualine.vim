@@ -22,16 +22,6 @@ require('lualine').setup {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {'filename'},
-    lualine_d = {
-         {
-				  function()
-					  return navic.get_location()
-				  end,
-				  cond = function()
-					  return navic.is_available()
-				  end
-        },
-    },
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
@@ -45,7 +35,13 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {},
-  winbar = {},
+  winbar = {
+             lualine_c = {
+                  "navic",
+        	  color_correction = nil,
+        	  navic_opts = nil
+	     },
+	  },
   inactive_winbar = {},
   extensions = {}
 }

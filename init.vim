@@ -28,14 +28,15 @@ Plug 'rbgrouleff/bclose.vim'
 Plug 'kelly-lin/ranger.nvim'
 
 "== vim-airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 "== lualine for status line
-"Plug 'nvim-lualine/lualine.nvim'
-" If you want to have icons in your statusline choose one of these
-"Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-lualine/lualine.nvim'
+"== bufferline for showing tabs
+Plug 'akinsho/bufferline.nvim'
 
 "== nerdcommenter
 Plug 'preservim/nerdcommenter'
@@ -167,10 +168,13 @@ source ~/.config/nvim/copilot.vim
 source ~/.config/nvim/autosave.vim
 
 "== vim-airline.vim ==
-source ~/.config/nvim/vim-airline.vim
+"source ~/.config/nvim/vim-airline.vim
 
 "== lualine
-"source ~/.config/nvim/lualine.vim
+source ~/.config/nvim/lualine.vim
+
+"== bufferline
+source ~/.config/nvim/bufferline.vim
 
 "== ranger.vim ==
 source ~/.config/nvim/ranger.vim
@@ -195,7 +199,6 @@ source ~/.config/nvim/hop.vim
 
 "== nvim-lspconfig
 source ~/.config/nvim/lspconfig.vim
-
 "== nvim-cmp.vim
 source ~/.config/nvim/nvim-cmp.vim
 
@@ -239,7 +242,7 @@ source ~/.config/nvim/lazygit.vim
 "source ~/.config/nvim/codeium.vim
 
 "== auto-session
-source ~/.config/nvim/auto-session.vim
+"source ~/.config/nvim/auto-session.vim
 
 "== neorg
 source ~/.config/nvim/neorg.vim

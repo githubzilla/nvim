@@ -1,3 +1,6 @@
+"== set neovim color schema
+colorscheme material
+
 "== tabline navigation ==
 nnoremap <space>p :bprevious<CR>
 nnoremap <space>n :bnext<CR>
