@@ -242,7 +242,7 @@ source ~/.config/nvim/lazygit.vim
 "source ~/.config/nvim/codeium.vim
 
 "== auto-session
-"source ~/.config/nvim/auto-session.vim
+source ~/.config/nvim/auto-session.vim
 
 "== neorg
 source ~/.config/nvim/neorg.vim
