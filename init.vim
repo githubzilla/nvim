@@ -48,10 +48,10 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'godlygeek/tabular'
 
 "== open-browser
-Plug 'tyru/open-browser.vim'
+"Plug 'tyru/open-browser.vim'
 
 "== dash
-Plug 'rizzatti/dash.vim'
+"Plug 'rizzatti/dash.vim'
 
 "== treesitter, disabled since it's not work under coc.vim
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
@@ -59,10 +59,10 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 "Plug 'nvim-treesitter/playground'
 
 "== lsp signature, disabled since it not work under coc.vim
-Plug 'ray-x/lsp_signature.nvim'
+"lug 'ray-x/lsp_signature.nvim'
 
 "Plug plantuml-syntax
-Plug 'aklt/plantuml-syntax'
+"Plug 'aklt/plantuml-syntax'
 
 "== sneak
 "Plug 'justinmk/vim-sneak'
@@ -113,7 +113,7 @@ Plug 'puremourning/vimspector'
 Plug 'folke/which-key.nvim'
 
 "== vista function/variable outline
-Plug 'liuchengxu/vista.vim'
+"Plug 'liuchengxu/vista.vim'
 
 "== ctrlspace
 "Plug 'vim-ctrlspace/vim-ctrlspace'
@@ -133,7 +133,7 @@ Plug 'rhysd/vim-grammarous'
 Plug 'editorconfig/editorconfig-vim'
 
 "== vim-diffchanges
-Plug 'jmcantrell/vim-diffchanges'
+"Plug 'jmcantrell/vim-diffchanges'
 
 "== fugitive
 Plug 'tpope/vim-fugitive'
@@ -156,8 +156,11 @@ Plug 'rmagatti/auto-session'
 "== neorg
 Plug 'nvim-neorg/neorg'
 
-"== oil.nvim
+"== oil.nvim, mange files in manner of buffer
 Plug 'stevearc/oil.nvim'
+
+"== add visual indent indication for code blocks
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 call plug#end()
 
@@ -249,3 +252,6 @@ source ~/.config/nvim/neorg.vim
 
 "== oil
 source ~/.config/nvim/oil.vim
+
+"== indent line
+source ~/.config/nvim/indentline.vim
