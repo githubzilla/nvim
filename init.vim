@@ -10,6 +10,8 @@ set termguicolors
 "== mouse
 set mouse=a
 
+set smartcase
+
 call plug#begin()
 
 "== copilot
@@ -161,6 +163,10 @@ Plug 'stevearc/oil.nvim'
 
 "== add visual indent indication for code blocks
 Plug 'lukas-reineke/indent-blankline.nvim'
+ 
+"== fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
