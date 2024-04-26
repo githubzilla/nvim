@@ -147,7 +147,7 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-live-grep-args.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'build': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
 "== auto-session
 Plug 'rmagatti/auto-session'
@@ -156,6 +156,10 @@ Plug 'rmagatti/auto-session'
 "Plug 'Exafunction/codeium.vim'
 
 "== neorg
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-neotest/nvim-nio'
+Plug 'nvim-neorg/lua-utils.nvim'
+Plug 'pysan3/pathlib.nvim'
 Plug 'nvim-neorg/neorg'
 
 "== oil.nvim, mange files in manner of buffer
