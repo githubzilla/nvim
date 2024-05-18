@@ -14,9 +14,6 @@ set smartcase
 
 call plug#begin()
 
-"== copilot
-Plug 'github/copilot.vim'
-
 "== vim-startify
 Plug 'mhinz/vim-startify'
 
@@ -25,9 +22,6 @@ Plug '907th/vim-auto-save'
 
 "== keep the window open when close buffer
 Plug 'rbgrouleff/bclose.vim'
-
-"== ranger.vim
-Plug 'kelly-lin/ranger.nvim'
 
 "== vim-airline
 "Plug 'vim-airline/vim-airline'
@@ -55,11 +49,6 @@ Plug 'godlygeek/tabular'
 "== dash
 "Plug 'rizzatti/dash.vim'
 
-"== treesitter, disabled since it's not work under coc.vim
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-"Plug 'nvim-treesitter/nvim-treesitter-context'
-"Plug 'nvim-treesitter/playground'
-
 "== lsp signature, disabled since it not work under coc.vim
 "lug 'ray-x/lsp_signature.nvim'
 
@@ -75,9 +64,6 @@ Plug 'phaazon/hop.nvim'
 "== file local history
 Plug 'mbbill/undotree'
 
-"== vim-clang-format
-Plug 'rhysd/vim-clang-format'
-
 "== neoformat -- Don't use neoformat, it didn't honor clang-format
 "--style=file
 "Plug 'sbdchd/neoformat'
@@ -85,57 +71,14 @@ Plug 'rhysd/vim-clang-format'
 "== nvim-lint
 Plug 'mfussenegger/nvim-lint'
 
-"== rust-tools
-" Collection of common configurations for the Nvim LSP client
-Plug 'neovim/nvim-lspconfig'
-"== show code context on status bar
-Plug 'SmiteshP/nvim-navic'
-" Completion framework
-Plug 'hrsh7th/nvim-cmp'
-" LSP completion source for nvim-cmp
-Plug 'hrsh7th/cmp-nvim-lsp'
-" Other usefull completion sources
-Plug 'hrsh7th/cmp-path'
-" Fuzzy finder
-" Optional
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-" Debug -- don't use dap, it's kind of premature
-
-"== lsp status - not work!
-"Plug 'nvim-lua/lsp-status.nvim'
-
-" vimspector
-Plug 'puremourning/vimspector'
-
-"== rust.vim
-"Plug 'rust-lang/rust.vim'
-
 "== which key
 Plug 'folke/which-key.nvim'
-
-"== vista function/variable outline
-"Plug 'liuchengxu/vista.vim'
-
-"== ctrlspace
-"Plug 'vim-ctrlspace/vim-ctrlspace'
-
-"== unimpaired
-"Plug 'tpope/vim-unimpaired'
-
-"== tasks
-Plug 'skywind3000/asynctasks.vim'
-Plug 'skywind3000/asyncrun.vim'
-
 
 "== grammer check
 Plug 'rhysd/vim-grammarous'
 
 "== editorconfig
 Plug 'editorconfig/editorconfig-vim'
-
-"== vim-diffchanges
-"Plug 'jmcantrell/vim-diffchanges'
 
 "== fugitive
 Plug 'tpope/vim-fugitive'
@@ -147,117 +90,53 @@ Plug 'kdheepak/lazygit.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-live-grep-args.nvim'
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'build': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 
 "== auto-session
 Plug 'rmagatti/auto-session'
 
-"== codeium
-"Plug 'Exafunction/codeium.vim'
-
-"== neorg
-Plug 'MunifTanjim/nui.nvim'
-Plug 'nvim-neotest/nvim-nio'
-Plug 'nvim-neorg/lua-utils.nvim'
-Plug 'pysan3/pathlib.nvim'
-Plug 'nvim-neorg/neorg'
-
 "== oil.nvim, mange files in manner of buffer
 Plug 'stevearc/oil.nvim'
 
-"== add visual indent indication for code blocks
-Plug 'lukas-reineke/indent-blankline.nvim'
- 
 call plug#end()
 
-"==copilot==
-source ~/.config/nvim/copilot.vim
-
 "== autosave.vim ==
-source ~/.config/nvim/autosave.vim
-
-"== vim-airline.vim ==
-"source ~/.config/nvim/vim-airline.vim
+source ~/AppData/Local/nvim/autosave.vim
 
 "== lualine
-source ~/.config/nvim/lualine.vim
+source ~/AppData/Local/nvim/lualine.vim
 
 "== bufferline
-source ~/.config/nvim/bufferline.vim
-
-"== ranger.vim ==
-source ~/.config/nvim/ranger.vim
-
-"== nerdcommenter ==
-source ~/.config/nvim/nerdcommenter.vim
-
-"== dash.vim ==
-source ~/.config/nvim/dash.vim
+source ~/AppData/Local/nvim/bufferline.vim
 
 "== telescope.vim ==
-source ~/.config/nvim/telescope.vim
-
-"== treesitter ==
-source ~/.config/nvim/treesitter.vim
-
-"== sneak ==
-"source ~/.config/nvim/sneak.vim
+source ~/AppData/Local/nvim/telescope.vim
 
 "== hop.nvim ==
-source ~/.config/nvim/hop.vim
-
-"== nvim-lspconfig
-source ~/.config/nvim/lspconfig.vim
-"== nvim-cmp.vim
-source ~/.config/nvim/nvim-cmp.vim
+source ~/AppData/Local/nvim/hop.vim
 
 "==basic vim settings in vim.vim ==
-source ~/.config/nvim/vim.vim
+source ~/AppData/Local/nvim/vim.vim
 
 "== which key
-source ~/.config/nvim/which_key.vim
-
-"== vista
-source ~/.config/nvim/vista.vim
-
-"== vimspector
-source ~/.config/nvim/vimspector.vim
+source ~/AppData/Local/nvim/which_key.vim
 
 "== vim-startify
-source ~/.config/nvim/startify.vim
-
-"== asynctasks
-source ~/.config/nvim/asynctasks.vim
+source ~/AppData/Local/nvim/startify.vim
 
 "== nvim-lint
-source ~/.config/nvim/nvim-lint.vim
-
-"== vim-clang-format
-source ~/.config/nvim/vim-clang-format.vim
-
-"== neoformat
-"source ~/.config/nvim/neoformat.vim
+source ~/AppData/Local/nvim/nvim-lint.vim
 
 "== grammerous
-source ~/.config/nvim/vim-grammarous.vim
+source ~/AppData/Local/nvim/vim-grammarous.vim
 
 "== undotree
-source ~/.config/nvim/undotree.vim
+source ~/AppData/Local/nvim/undotree.vim
 
 "== lazygit
-source ~/.config/nvim/lazygit.vim
-
-"== codeium
-"source ~/.config/nvim/codeium.vim
+source ~/AppData/Local/nvim/lazygit.vim
 
 "== auto-session
-source ~/.config/nvim/auto-session.vim
-
-"== neorg
-source ~/.config/nvim/neorg.vim
+source ~/AppData/Local/nvim/auto-session.vim
 
 "== oil
-source ~/.config/nvim/oil.vim
-
-"== indent line
-source ~/.config/nvim/indentline.vim
+source ~/AppData/Local/nvim/oil.vim
