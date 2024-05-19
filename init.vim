@@ -167,7 +167,10 @@ Plug 'stevearc/oil.nvim'
 
 "== add visual indent indication for code blocks
 Plug 'lukas-reineke/indent-blankline.nvim'
- 
+
+"== gitsigns for showing git decorations for buffer
+Plug 'lewis6991/gitsigns.nvim'
+
 call plug#end()
 
 "==copilot==
@@ -192,7 +195,7 @@ source ~/.config/nvim/ranger.vim
 source ~/.config/nvim/nerdcommenter.vim
 
 "== dash.vim ==
-source ~/.config/nvim/dash.vim
+"source ~/.config/nvim/dash.vim
 
 "== telescope.vim ==
 source ~/.config/nvim/telescope.vim
@@ -261,3 +264,6 @@ source ~/.config/nvim/oil.vim
 
 "== indent line
 source ~/.config/nvim/indentline.vim
+
+"== gitsigns
+source ~/.config/nvim/gitsigns.vim
