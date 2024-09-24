@@ -14,15 +14,15 @@ require('telescope').setup{
     layout_config = { width = 0.90 },
     -- layout_config = { width = 0.90, height = 0.90, preview_width = 0.5 },
     path_display={"truncate"},
-    file_ignore_patterns = {"bld*", "build*", "compile%_commands*", "rocksdb_cloud_db", "%.o", "%.a", "%.so", "%.cc.d"}
+    file_ignore_patterns = {"bld*", "build*", "compile%_commands*", "rocksdb_cloud_db", "%.o", "%.a", "%.so", "%.cc.d", "logs"}
   },
   pickers = {
     buffers = {
       mappings = {
         i = {
           ["<c-x>"] = actions.delete_buffer + actions.move_to_top,
-	        ["<c-q>"] = actions.smart_add_to_qflist + actions.open_qflist, 
-	        ["<c-k>"] = lga_actions.quote_prompt(),
+	  ["<c-q>"] = actions.smart_add_to_qflist + actions.open_qflist, 
+	  ["<c-k>"] = lga_actions.quote_prompt(),
         }
       }
     }
