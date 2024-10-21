@@ -100,6 +100,10 @@ cmd = {"/usr/bin/clangd-17", "--background-index", "--compile-commands-dir="..wo
     }
 }
 
+-- lsp for bash
+-- npm i -g bash-language-server
+require'lspconfig'.bashls.setup{}
+
 require'lspconfig'.rust_analyzer.setup{
     on_attach=on_attach,
     settings = {
