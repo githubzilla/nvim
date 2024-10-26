@@ -104,6 +104,10 @@ cmd = {"/usr/bin/clangd-17", "--background-index", "--compile-commands-dir="..wo
 -- npm i -g bash-language-server
 require'lspconfig'.bashls.setup{}
 
+-- lsp for python
+-- pip install pyright
+require'lspconfig'.pyright.setup{}
+
 require'lspconfig'.rust_analyzer.setup{
     on_attach=on_attach,
     settings = {
