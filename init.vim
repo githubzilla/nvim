@@ -15,7 +15,7 @@ set smartcase
 call plug#begin()
 
 "== copilot
-Plug 'github/copilot.vim'
+"Plug 'github/copilot.vim'
 
 "== vim-startify
 Plug 'mhinz/vim-startify'
@@ -171,10 +171,14 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 "== gitsigns for showing git decorations for buffer
 Plug 'lewis6991/gitsigns.nvim'
 
+"== copilot chat
+Plug 'zbirenbaum/copilot.lua'
+Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+
 call plug#end()
 
 "==copilot==
-source ~/.config/nvim/copilot.vim
+"source ~/.config/nvim/copilot.vim
 
 "== autosave.vim ==
 source ~/.config/nvim/autosave.vim
@@ -267,3 +271,6 @@ source ~/.config/nvim/indentline.vim
 
 "== gitsigns
 source ~/.config/nvim/gitsigns.vim
+
+"== copilot chat
+source ~/.config/nvim/copilot-chat.vim
