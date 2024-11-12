@@ -172,8 +172,8 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 
 "== copilot chat
-Plug 'zbirenbaum/copilot.lua'
-Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
+"Plug 'zbirenbaum/copilot.lua'
+"Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 
 call plug#end()
 
@@ -273,4 +273,4 @@ source ~/.config/nvim/indentline.vim
 source ~/.config/nvim/gitsigns.vim
 
 "== copilot chat
-source ~/.config/nvim/copilot-chat.vim
+"source ~/.config/nvim/copilot-chat.vim
