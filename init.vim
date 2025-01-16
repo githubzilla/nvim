@@ -15,7 +15,7 @@ set smartcase
 call plug#begin()
 
 "== copilot
-"Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 
 "== vim-startify
 Plug 'mhinz/vim-startify'
@@ -175,10 +175,26 @@ Plug 'lewis6991/gitsigns.nvim'
 "Plug 'zbirenbaum/copilot.lua'
 "Plug 'CopilotC-Nvim/CopilotChat.nvim', { 'branch': 'canary' }
 
+"== copilot lua
+"Plug 'zbirenbaum/copilot.lua'
+
+"== avante.nvim
+" Deps
+Plug 'stevearc/dressing.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'MunifTanjim/nui.nvim'
+
+" Optional deps
+Plug 'hrsh7th/nvim-cmp'
+Plug 'nvim-tree/nvim-web-devicons' "or Plug 'echasnovski/mini.icons'
+Plug 'HakonHarnes/img-clip.nvim'
+Plug 'zbirenbaum/copilot.lua'
+Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+
 call plug#end()
 
 "==copilot==
-"source ~/.config/nvim/copilot.vim
+source ~/.config/nvim/copilot.vim
 
 "== autosave.vim ==
 source ~/.config/nvim/autosave.vim
@@ -274,3 +290,9 @@ source ~/.config/nvim/gitsigns.vim
 
 "== copilot chat
 "source ~/.config/nvim/copilot-chat.vim
+
+"== copilot lua
+"source ~/.config/nvim/copilot-lua.vim
+
+"== avante
+source ~/.config/nvim/avante.vim
