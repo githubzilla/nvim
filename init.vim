@@ -191,6 +191,12 @@ Plug 'HakonHarnes/img-clip.nvim'
 Plug 'zbirenbaum/copilot.lua'
 Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 
+"== nvim-treesitter-txobjects
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+
+"== smear-cursor
+Plug 'sphamba/smear-cursor.nvim'
+
 call plug#end()
 
 "==copilot==
@@ -296,3 +302,6 @@ source ~/.config/nvim/gitsigns.vim
 
 "== avante
 source ~/.config/nvim/avante.vim
+
+"== smear-cursor
+source ~/.config/nvim/smear-cursor.vim
