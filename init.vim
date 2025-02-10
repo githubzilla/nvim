@@ -195,7 +195,7 @@ Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
 "== smear-cursor
-Plug 'sphamba/smear-cursor.nvim'
+"Plug 'sphamba/smear-cursor.nvim'
 
 call plug#end()
 
@@ -304,4 +304,4 @@ source ~/.config/nvim/gitsigns.vim
 source ~/.config/nvim/avante.vim
 
 "== smear-cursor
-source ~/.config/nvim/smear-cursor.vim
+"source ~/.config/nvim/smear-cursor.vim
