@@ -61,7 +61,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 "Plug 'nvim-treesitter/playground'
 
 "== lsp signature, disabled since it not work under coc.vim
-"lug 'ray-x/lsp_signature.nvim'
+Plug 'ray-x/lsp_signature.nvim'
 
 "Plug plantuml-syntax
 "Plug 'aklt/plantuml-syntax'
@@ -196,6 +196,11 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 "== smear-cursor
 "Plug 'sphamba/smear-cursor.nvim'
 
+"== markdown render
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'echasnovski/mini.nvim'
+Plug 'MeanderingProgrammer/render-markdown.nvim'
+
 call plug#end()
 
 "==copilot==
@@ -238,6 +243,8 @@ source ~/.config/nvim/hop.vim
 source ~/.config/nvim/lspconfig.vim
 "== nvim-cmp.vim
 source ~/.config/nvim/nvim-cmp.vim
+"== lsp_signature
+source ~/.config/nvim/lsp_signature.vim
 
 "==basic vim settings in vim.vim ==
 source ~/.config/nvim/vim.vim
@@ -304,3 +311,6 @@ source ~/.config/nvim/avante.vim
 
 "== smear-cursor
 "source ~/.config/nvim/smear-cursor.vim
+
+"== markdown render
+source ~/.config/nvim/markdown-render.vim
