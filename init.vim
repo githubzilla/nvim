@@ -201,6 +201,9 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'echasnovski/mini.nvim'
 Plug 'MeanderingProgrammer/render-markdown.nvim'
 
+"== nvim tree
+Plug 'nvim-tree/nvim-tree.lua'
+
 call plug#end()
 
 "==copilot==
@@ -314,3 +317,6 @@ source ~/.config/nvim/avante.vim
 
 "== markdown render
 source ~/.config/nvim/markdown-render.vim
+
+"== nvim-tree
+source ~/.config/nvim/nvim-tree.vim
