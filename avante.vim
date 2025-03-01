@@ -60,7 +60,7 @@ require('avante').setup({
    auto_suggestions_provider = "copilot",
    copilot = {
            model = "claude-3.7-sonnet",
-	   max_tokens = 16384
+	   max_tokens = 655360
 	   },
    vendors = {
 	   ["gemini-2.0"] = {
