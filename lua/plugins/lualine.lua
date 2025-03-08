@@ -47,4 +47,18 @@ return function()
     inactive_winbar = {},
     extensions = {}
   })
+
+  vim.o.cursorline = true
+  vim.o.background = "dark"
+  vim.api.nvim_set_hl(0, 'Normal', { bg = 'NONE' })
+  vim.api.nvim_set_hl(0, 'SignColumn', { bg = '#262626' })
+  vim.api.nvim_set_hl(0, 'LineNr', { fg = 'grey', bg = 'NONE' })
+  vim.api.nvim_set_hl(0, 'CursorLineNr', { fg = '#d7af00', bg = 'green' })
+  vim.api.nvim_set_hl(0, 'CursorLine', { underline = true })
+
+  vim.api.nvim_set_hl(0, 'Visual', {
+     bg = '#555555',
+     blend = 30,
+     underline = true,
+  })
 end 
