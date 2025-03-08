@@ -79,8 +79,10 @@ return require("lazy").setup({
 
   -- Treesitter
   {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = { 
+      "nvim-treesitter/nvim-treesitter-textobjects",
+    },
     config = require("plugins.treesitter"),
   },
 
@@ -133,7 +135,7 @@ return require("lazy").setup({
       "nvim-telescope/telescope-live-grep-args.nvim",
       { 
         "nvim-telescope/telescope-fzf-native.nvim",
-        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
+        build = "make"
       },
     },
     config = require("plugins.telescope"),
