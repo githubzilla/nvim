@@ -60,6 +60,7 @@ require('avante').setup({
    auto_suggestions_provider = "copilot",
    copilot = {
            model = "claude-3.7-sonnet",
+           proxy = "http://192.168.1.69:6152",
 	   max_tokens = 655360
 	   },
    vendors = {
@@ -106,9 +107,13 @@ require('avante').setup({
 	   },
    file_selector = {
 	   provider = "telescope",
+	   provider_opts = {
+                find_command = { "rg", "--no-ignore-vcs", "--files"} -- this can make avante file select a bit fast
+            }
 	   },
    behaviour = {
 	   auto_suggestions = false,
+           enable_token_counting = false, -- counting token can be very slow
 	   },
    suggestion = {
 	   debounce = 600,
