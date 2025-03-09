@@ -7,3 +7,4 @@ $HOME
 .undodir
 session
 *.patch
+lazy-lock.json
