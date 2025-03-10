@@ -66,11 +66,17 @@ return require("lazy").setup({
     "neovim/nvim-lspconfig",
     dependencies = {
       "SmiteshP/nvim-navic",
-      "hrsh7th/nvim-cmp",
+      {
+        "hrsh7th/nvim-cmp",
+        config = require("plugins.nvim-cmp"),
+      },
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
+      "nvim-lua/plenary.nvim",
+      "nvim-lua/popup.nvim",
     },
     config = require("plugins.lspconfig"),
+
   },
   {
     "ray-x/lsp_signature.nvim",
@@ -172,7 +178,9 @@ return require("lazy").setup({
   },
 
   -- AI Assistance
-  { "github/copilot.vim" },
+  { "github/copilot.vim",
+    config = require("plugins.copilot"),
+  },
   {
     "yetone/avante.nvim",
     branch = "main",
