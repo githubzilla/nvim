@@ -1,8 +1,8 @@
 return function()
-  vim.g.clang_format = {
-    detect_style_file = 1,
-    command = '/usr/bin/clang-format-17'
-  }
-  
-  vim.keymap.set('n', '<leader>cf', '<cmd>ClangFormat<cr>', { silent = true })
+-- Set the clang-format command and enable style file detection
+vim.g["clang_format#detect_style_file"] = 1
+vim.g["clang_format#command"] = "/usr/bin/clang-format-17"
+
+-- Map <leader>cf to the ClangFormat command
+vim.api.nvim_set_keymap('n', '<leader>cf', '<cmd>ClangFormat<cr>', { noremap = true, silent = true })
 end 
