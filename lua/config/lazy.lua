@@ -94,8 +94,8 @@ return require("lazy").setup({
 
   -- Formatting & Linting
   {
-    "rhysd/vim-clang-format",
-    config = require("plugins.clang-format"),
+    "stevearc/conform.nvim",
+    config = require("plugins.conform"),
   },
   {
     "mfussenegger/nvim-lint",
@@ -139,10 +139,6 @@ return require("lazy").setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-live-grep-args.nvim",
-      { 
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make"
-      },
     },
     config = require("plugins.telescope"),
   },

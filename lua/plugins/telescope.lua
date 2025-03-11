@@ -4,10 +4,6 @@ return function()
   local lga_actions = require('telescope-live-grep-args.actions')
 
   -- Load extensions
-  telescope.load_extension('live_grep_args')
-  telescope.load_extension('fzf')
-  telescope.load_extension('lazygit')
-
   telescope.setup({
     defaults = {
       layout_strategy = 'vertical',
@@ -30,6 +26,9 @@ return function()
       }
     },
   })
+
+  telescope.load_extension('live_grep_args')
+  telescope.load_extension('lazygit')
 
   -- Create autocommands for telescope previewer
   local telescope_group = vim.api.nvim_create_augroup('TelescopeCustom', { clear = true })
