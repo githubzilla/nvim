@@ -9,9 +9,9 @@ return function()
             objc = {"clang_format"},
             objcpp = {"clang_format"},
             cuda = {"clang_format"},
-            proto = {"clang_format"},
+            proto = {"buf"},
             lua = {"lua_format"},
-            json = {"jq"}
+            json = {"jq"},
         },
 
         -- Configure formatters
@@ -35,7 +35,12 @@ return function()
             -- JSON formatter
             jq = {
                 args = {"--indent", "2"} -- Format JSON with 2-space indentation
-            }
+            },
+	    -- ProtoBuf formatter
+	    buf = {
+		commmand = "/usr/local/bin/buf-Linux-x86_64",
+		args = {"format"},
+	    },
         }
 
         -- Format on save
