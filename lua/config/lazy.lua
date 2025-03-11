@@ -101,6 +101,12 @@ return require("lazy").setup({
     "mfussenegger/nvim-lint",
     config = require("plugins.nvim-lint"),
   },
+  {
+      'numToStr/Comment.nvim',
+      opts = {
+          -- add any options here
+      }
+  },
 
   -- Debug
   {
