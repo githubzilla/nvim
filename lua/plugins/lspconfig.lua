@@ -96,11 +96,16 @@ return function()
     on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
-    }
+    },
+    filetypes = {"c", "cpp", "objc", "objcpp", "cuda"},
   })
 
   nvim_lsp.bashls.setup({})
   nvim_lsp.pyright.setup({})
+  nvim_lsp.buf_ls.setup({
+      cmd = { "/usr/local/bin/buf-Linux-x86_64", "beta", "lsp", "--timeout=0", "--log-format=text" },
+      filetypes = {"proto"},
+  })
 
   nvim_lsp.rust_analyzer.setup({
     on_attach = on_attach,
