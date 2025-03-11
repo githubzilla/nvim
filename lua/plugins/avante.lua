@@ -33,10 +33,11 @@ return function()
         timeout = 30000,
       },
     },
+
     file_selector = {
       provider = "telescope",
       provider_opts = {
-        find_command = { "rg", "--no-ignore-vcs", "--files"} -- this can make avante file select a bit fast
+        find_command = { "rg", "--ignore-vcs", "--files"}, -- this can make avante file select a bit fast
       }
     },
     behaviour = {
