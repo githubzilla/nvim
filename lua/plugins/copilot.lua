@@ -5,7 +5,7 @@ return function()
     ["*"] = false,
     ["javascript"] = true,
     ["typescript"] = true,
-    ["lua"] = false,
+    ["lua"] = true,
     ["rust"] = true,
     ["c"] = true,
     ["c#"] = true,
