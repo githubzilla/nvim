@@ -1,3 +1,5 @@
+local is_windows = vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1
+
 return require("lazy").setup({
     -- UI & Theme
     {
@@ -127,6 +129,7 @@ return require("lazy").setup({
         "yetone/avante.nvim",
         branch = "main",
         build = "make",
+	enabled = not is_windows,
         dependencies = {
             "nvim-treesitter/nvim-treesitter", "stevearc/dressing.nvim",
             "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim",
