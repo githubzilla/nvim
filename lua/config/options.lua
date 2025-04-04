@@ -25,6 +25,6 @@ vim.cmd([[autocmd SwapExists * let v:swapchoice = "o"]])
 opt.hidden = true
 opt.backup = false
 opt.writebackup = false
-opt.cmdheight = 2
+opt.cmdheight = 1
 opt.updatetime = 300
 opt.shortmess:append("c") 
