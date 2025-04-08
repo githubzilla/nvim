@@ -70,7 +70,10 @@ return require("lazy").setup({
     },
 
     -- Debug
-    {"puremourning/vimspector", config = require("plugins.vimspector")},
+    {"puremourning/vimspector", 
+     enabled = not is_windows,
+     config = require("plugins.vimspector")
+    },
 
     -- Which Key
     {"folke/which-key.nvim", config = require("plugins.which-key")},
