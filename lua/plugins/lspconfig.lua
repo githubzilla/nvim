@@ -100,7 +100,9 @@ return function()
     filetypes = {"c", "cpp", "objc", "objcpp", "cuda"},
   })
 
-  nvim_lsp.bashls.setup({})
+  nvim_lsp.bashls.setup({
+      cmd = {"bash-language-server", "start"}
+  })
   nvim_lsp.pyright.setup({})
   nvim_lsp.buf_ls.setup({
       cmd = { "/usr/local/bin/buf-Linux-x86_64", "beta", "lsp", "--timeout=0", "--log-format=text" },
