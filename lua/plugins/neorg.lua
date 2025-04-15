@@ -10,6 +10,8 @@ return function()
           },
         },
       },
+      ["core.export"] = {},
+      ["core.export.markdown"] = {}, -- Neorg export to-file <file_name>.md
     },
   })
 end 

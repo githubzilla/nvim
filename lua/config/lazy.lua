@@ -109,12 +109,8 @@ return require("lazy").setup({
     -- Note Taking
     {
         "nvim-neorg/neorg",
-        build = ":Neorg sync-parsers",
-        dependencies = {
-            "nvim-lua/plenary.nvim", "nvim-neorg/lua-utils.nvim",
-            "pysan3/pathlib.nvim", "MunifTanjim/nui.nvim",
-            "nvim-neotest/nvim-nio"
-        },
+        lazy = false,  -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+        version = "*", -- Pin Neorg to the latest stable release
         config = require("plugins.neorg")
     },
 
