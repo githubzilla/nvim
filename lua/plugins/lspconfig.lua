@@ -84,9 +84,10 @@ return function()
   end
 
   -- LSP servers setup
+  local capabilities = require("cmp_nvim_lsp").default_capabilities()
   nvim_lsp.clangd.setup({
     cmd = {
-      "/usr/bin/clangd-17",
+      "/usr/bin/clangd-20",
       "--background-index",
       "--compile-commands-dir=" .. working_dir,
       "--enable-config",
@@ -98,36 +99,37 @@ return function()
       debounce_text_changes = 150,
     },
     filetypes = {"c", "cpp", "objc", "objcpp", "cuda"},
+    capabilities = capabilities,
   })
 
-  nvim_lsp.bashls.setup({
-      cmd = {"bash-language-server", "start"}
-  })
-  nvim_lsp.pyright.setup({})
-  nvim_lsp.buf_ls.setup({
-      cmd = { "/usr/local/bin/buf-Linux-x86_64", "beta", "lsp", "--timeout=0", "--log-format=text" },
-      filetypes = {"proto"},
-  })
-
-  nvim_lsp.rust_analyzer.setup({
-    on_attach = on_attach,
-    settings = {
-      ["rust-analyzer"] = {
-        imports = {
-          granularity = {
-            group = "module",
-          },
-          prefix = "self",
-        },
-        cargo = {
-          buildScripts = {
-            enable = true,
-          },
-        },
-        procMacro = {
-          enable = true
-        },
-      }
-    }
-  })
+  -- nvim_lsp.bashls.setup({
+  --     cmd = {"bash-language-server", "start"}
+  -- })
+  -- nvim_lsp.pyright.setup({})
+  -- nvim_lsp.buf_ls.setup({
+  --     cmd = { "/usr/local/bin/buf-Linux-x86_64", "beta", "lsp", "--timeout=0", "--log-format=text" },
+  --     filetypes = {"proto"},
+  -- })
+  --
+  -- nvim_lsp.rust_analyzer.setup({
+  --   on_attach = on_attach,
+  --   settings = {
+  --     ["rust-analyzer"] = {
+  --       imports = {
+  --         granularity = {
+  --           group = "module",
+  --         },
+  --         prefix = "self",
+  --       },
+  --       cargo = {
+  --         buildScripts = {
+  --           enable = true,
+  --         },
+  --       },
+  --       procMacro = {
+  --         enable = true
+  --       },
+  --     }
+  --   }
+  -- })
 end 
