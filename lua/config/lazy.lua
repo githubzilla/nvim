@@ -38,6 +38,7 @@ return require("lazy").setup({
     {"jiangmiao/auto-pairs"}, {"godlygeek/tabular"},
     {"phaazon/hop.nvim", config = require("plugins.hop")},
     {"mbbill/undotree", config = require("plugins.undotree")},
+    { 'echasnovski/mini.files', version = '*', config = require("plugins.mini-files")},
 
     -- LSP & Completion
     {
