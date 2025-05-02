@@ -6,7 +6,9 @@ return function()
     auto_suggestions_provider = "copilot",
     copilot = {
       model = "claude-3.7-sonnet",
-      max_tokens = 655360
+      max_tokens = 655360,
+      proxy = "http://192.168.1.69:6152",
+      -- allow_insecure = true,
     },
     vendors = {
       ["gemini-2.0"] = {
@@ -49,4 +51,7 @@ return function()
       throttle = 600,
     },
   })
+
+  -- Register keymappings
+  vim.keymap.set('n', '<leader>al', '<cmd>AvanteClear<cr>', { desc = 'Clear Avante context' })
 end 

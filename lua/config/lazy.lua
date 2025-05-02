@@ -96,13 +96,23 @@ return require("lazy").setup({
     {"lewis6991/gitsigns.nvim", config = require("plugins.gitsigns")},
 
     -- Telescope
+    -- {
+    --     "nvim-telescope/telescope.nvim",
+    --     dependencies = {
+    --         "nvim-lua/plenary.nvim",
+    --         "nvim-telescope/telescope-live-grep-args.nvim"
+    --     },
+    --     config = require("plugins.telescope")
+    -- },
+
+    -- Fzf-lua
     {
-        "nvim-telescope/telescope.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope-live-grep-args.nvim"
-        },
-        config = require("plugins.telescope")
+      "ibhagwan/fzf-lua",
+      -- optional for icon support
+      dependencies = { "nvim-tree/nvim-web-devicons" },
+      -- or if using mini.icons/mini.nvim
+      -- dependencies = { "echasnovski/mini.icons" },
+      config = require("plugins.fzf-lua"),
     },
 
     -- Session Management
@@ -136,13 +146,8 @@ return require("lazy").setup({
             "nvim-treesitter/nvim-treesitter", "stevearc/dressing.nvim",
             "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim",
             --- The below dependencies are optional,
-            "echasnovski/mini.pick", -- for file_selector provider mini.pick
-            "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
             "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-            {
-                "ibhagwan/fzf-lua", -- for file_selector provider fzf
-                config = require("plugins.fzf-lua")
-            }, "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+            "ibhagwan/fzf-lua", -- for file_selector provider fzf
             "zbirenbaum/copilot.lua" -- for providers='copilot'
         },
         config = require("plugins.avante")

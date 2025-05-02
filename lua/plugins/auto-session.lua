@@ -12,6 +12,10 @@ return function()
     auto_restore_enabled = true,
     auto_session_suppress_dirs = nil,
     auto_session_use_git_branch = true,
-    bypass_session_save_file_types = nil
+    bypass_session_save_file_types = nil,
+    session_lens = {
+      -- telescope is disabled, so we need to set this to false
+      load_on_setup = false,
+    },
   })
 end 
