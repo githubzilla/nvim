@@ -29,7 +29,7 @@ return function()
         winopts = {
             -- Configure preview window to show up as a side window
             preview = {
-                vertical = "right:50%", -- Show preview on right side taking 45% of width
+                vertical = "right:65%", -- Show preview on right side taking 45% of width
                 horizontal = "down:50%", -- For horizontal splits, show below with 50% height
                 layout = "vertical", -- Default to vertical layout
                 delay = 100, -- Small delay before preview
@@ -39,7 +39,7 @@ return function()
             -- Use a standard split window instead of a popup
             -- split = "belowright new",
             height = 0.85, -- 80% of screen height
-            width = 0.80, -- Full width
+            width = 0.90, -- Full width
             border = "rounded", -- Rounded corners
             fullscreen = false
         },
