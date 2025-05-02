@@ -1,4 +1,4 @@
-local is_windows = vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1
+local is_windows = vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 or os.getenv("WSL_DISTRO_NAME") == "archlinux"
 
 return require("lazy").setup({
     -- UI & Theme
@@ -43,6 +43,7 @@ return require("lazy").setup({
     -- LSP & Completion
     {
         "neovim/nvim-lspconfig",
+        enabled = not is_windows,
         dependencies = {
             "SmiteshP/nvim-navic",
             {"hrsh7th/nvim-cmp", config = require("plugins.nvim-cmp")},
@@ -83,6 +84,7 @@ return require("lazy").setup({
     -- Task Running
     {
         "skywind3000/asynctasks.vim",
+        enabled = not is_windows,
         dependencies = {"skywind3000/asyncrun.vim"},
         config = require("plugins.asynctasks")
     },
