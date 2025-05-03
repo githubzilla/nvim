@@ -67,7 +67,8 @@ return function()
     map('n', '<leader>fG', function()
         fzf.live_grep({
             rg_opts = common_filter ..
-                "--no-heading --with-filename --line-number --column --smart-case"
+                "--no-heading --with-filename --line-number --column --smart-case",
+            search = vim.fn.expand('<cword>')
         })
     end, opts)
     -- Fix duplicate key mapping by changing to <leader>fw (word under cursor)
