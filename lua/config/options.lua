@@ -28,3 +28,7 @@ opt.writebackup = false
 opt.cmdheight = 1
 opt.updatetime = 300
 opt.shortmess:append("c") 
+
+-- Enable treesitter fold
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
