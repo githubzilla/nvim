@@ -56,7 +56,7 @@ return function()
 
     -- File finding
     map('n', '<leader>ff',
-        function() fzf.files({cmd = "rg --files " .. common_filter}) end, opts)
+        function() fzf.files({cmd = "rg --files " .. common_filter, line_query = true}) end, opts)
 
     map('n', '<leader>fg', function()
         fzf.live_grep({
