@@ -45,7 +45,8 @@ return function()
         },
         fzf_opts = {
             ["--layout"] = "reverse", -- Cursor at top
-            ["--info"] = "inline"
+            ["--info"] = "inline",
+	    ["--cycle"] = true,
         }
     })
 
