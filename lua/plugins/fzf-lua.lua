@@ -6,22 +6,22 @@ return function()
     require("fzf-lua").setup({
         -- Path display options
         files = {
-            path_shorten = 5, -- Shorten directory names to first letter
+            path_shorten = 9, -- Shorten directory names to first letter
             formatter = "path.filename_first"
         },
 
         lsp = {
-            path_shorten = 5, -- Shorten directory names to first letter
+            path_shorten = 9, -- Shorten directory names to first letter
             formatter = "path.filename_first"
         },
 
         grep = {
-            path_shorten = 5, -- Shorten directory names to first letter
+            path_shorten = 9, -- Shorten directory names to first letter
             formatter = "path.filename_first"
         },
 
         buffers = {
-            path_shorten = 5, -- Shorten directory names to first letter
+            path_shorten = 9, -- Shorten directory names to first letter
             formatter = "path.filename_first"
         },
 
