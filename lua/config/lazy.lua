@@ -25,15 +25,16 @@ return require("lazy").setup({
         config = require("plugins.indentline")
     },
 
-    -- File Management
     {"907th/vim-auto-save", config = require("plugins.autosave")},
     {"rbgrouleff/bclose.vim"},
+    -- File Management
+    {"vifm/vifm.vim", config = require("plugins.vifm")},
     -- {"kelly-lin/ranger.nvim", config = require("plugins.ranger")},
-    {
-        "nvim-tree/nvim-tree.lua",
-        dependencies = {"nvim-tree/nvim-web-devicons"},
-        config = require("plugins.nvim-tree")
-    },
+    -- {
+    --     "nvim-tree/nvim-tree.lua",
+    --     dependencies = {"nvim-tree/nvim-web-devicons"},
+    --     config = require("plugins.nvim-tree")
+    -- },
     -- {"stevearc/oil.nvim", config = require("plugins.oil")},
 
     -- Editor Features
