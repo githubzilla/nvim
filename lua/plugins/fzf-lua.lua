@@ -25,16 +25,34 @@ return function()
             formatter = "path.filename_first"
         },
 
+        previewers = {
+            builtin = {
+                treesitter = {
+                    enabled = true, -- Enable treesitter preview
+                    disabled = {}, -- Disable for specific filetypes
+                    context = {
+                        enabled = true, -- Enable context preview
+			line_numbers = true, -- Show line numbers in context
+                        max_lines = 10, -- Maximum lines to show in context
+                        min_lines = 1, -- Minimum lines to show in context
+                        trim_scope = "outer" -- Show outer context lines
+                    }
+                }
+            }
+        },
+
         -- Open in window mode instead of popup
         winopts = {
             -- Configure preview window to show up as a side window
             preview = {
+                default = "builtin",
                 vertical = "right:65%", -- Show preview on right side taking 45% of width
                 horizontal = "down:50%", -- For horizontal splits, show below with 50% height
                 layout = "vertical", -- Default to vertical layout
                 delay = 100, -- Small delay before preview
                 title = true, -- Show file title
-                scrollbar = "float"
+                scrollbar = "float",
+                wrap = true
             },
             -- Use a standard split window instead of a popup
             -- split = "belowright new",
@@ -43,10 +61,11 @@ return function()
             border = "rounded", -- Rounded corners
             fullscreen = false
         },
+
         fzf_opts = {
             ["--layout"] = "reverse", -- Cursor at top
             ["--info"] = "inline",
-	    ["--cycle"] = true,
+            ["--cycle"] = true
         }
     })
 
@@ -56,8 +75,9 @@ return function()
     local fzf = require("fzf-lua")
 
     -- File finding
-    map('n', '<leader>ff',
-        function() fzf.files({cmd = "rg --files " .. common_filter, line_query = true}) end, opts)
+    map('n', '<leader>ff', function()
+        fzf.files({cmd = "rg --files " .. common_filter, line_query = true})
+    end, opts)
 
     map('n', '<leader>fg', function()
         fzf.live_grep({

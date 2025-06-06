@@ -28,7 +28,7 @@ return require("lazy").setup({
     {"907th/vim-auto-save", config = require("plugins.autosave")},
     {"rbgrouleff/bclose.vim"},
     -- File Management
-    -- {"kelly-lin/ranger.nvim", config = require("plugins.ranger")},
+    {"kelly-lin/ranger.nvim", config = require("plugins.ranger")},
     -- {
     --     "nvim-tree/nvim-tree.lua",
     --     dependencies = {"nvim-tree/nvim-web-devicons"},
@@ -61,8 +61,19 @@ return require("lazy").setup({
     -- Treesitter
     {
         "nvim-treesitter/nvim-treesitter",
-        dependencies = {"nvim-treesitter/nvim-treesitter-textobjects"},
-        config = require("plugins.treesitter")
+	branch = "master",
+	build = ":TSUpdate",
+    },
+
+    {
+	"nvim-treesitter/nvim-treesitter-context",
+	dependencies = {"nvim-treesitter/nvim-treesitter"},
+	config = require("plugins.treesitter-context")
+    },
+
+    {"nvim-treesitter/nvim-treesitter-textobjects",
+     dependencies = {"nvim-treesitter/nvim-treesitter"},
+     config = require("plugins.treesitter-textobjects")
     },
 
     -- Formatting & Linting
@@ -113,7 +124,7 @@ return require("lazy").setup({
     {
       "ibhagwan/fzf-lua",
       -- optional for icon support
-      dependencies = { "nvim-tree/nvim-web-devicons" },
+      dependencies = { "nvim-tree/nvim-web-devicons", "nvim-treesitter/nvim-treesitter-context"},
       -- or if using mini.icons/mini.nvim
       -- dependencies = { "echasnovski/mini.icons" },
       config = require("plugins.fzf-lua"),

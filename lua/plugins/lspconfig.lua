@@ -7,50 +7,50 @@ return function()
   ]])
 
   local nvim_lsp = require('lspconfig')
-  local navic = require("nvim-navic")
+  -- local navic = require("nvim-navic")
 
   -- Navic setup
-  navic.setup({
-    icons = {
-      File          = "󰈙 ",
-      Module        = " ",
-      Namespace     = "󰌗 ",
-      Package       = " ",
-      Class         = "󰌗 ",
-      Method        = "󰆧 ",
-      Property      = " ",
-      Field         = " ",
-      Constructor   = " ",
-      Enum          = "󰕘",
-      Interface     = "󰕘",
-      Function      = "󰊕 ",
-      Variable      = "󰆧 ",
-      Constant      = "󰏿 ",
-      String        = "󰀬 ",
-      Number        = "󰎠 ",
-      Boolean       = "◩ ",
-      Array         = "󰅪 ",
-      Object        = "󰅩 ",
-      Key           = "󰌋 ",
-      Null          = "󰟢 ",
-      EnumMember    = " ",
-      Struct        = "󰌗 ",
-      Event         = " ",
-      Operator      = "󰆕 ",
-      TypeParameter = "󰊄 ",
-    },
-    lsp = {
-      auto_attach = false,
-      preference = nil,
-    },
-    highlight = false,
-    separator = " > ",
-    depth_limit = 0,
-    depth_limit_indicator = "..",
-    safe_output = true,
-    lazy_update_context = false,
-    click = false,
-  })
+  -- navic.setup({
+  --   icons = {
+  --     File          = "󰈙 ",
+  --     Module        = " ",
+  --     Namespace     = "󰌗 ",
+  --     Package       = " ",
+  --     Class         = "󰌗 ",
+  --     Method        = "󰆧 ",
+  --     Property      = " ",
+  --     Field         = " ",
+  --     Constructor   = " ",
+  --     Enum          = "󰕘",
+  --     Interface     = "󰕘",
+  --     Function      = "󰊕 ",
+  --     Variable      = "󰆧 ",
+  --     Constant      = "󰏿 ",
+  --     String        = "󰀬 ",
+  --     Number        = "󰎠 ",
+  --     Boolean       = "◩ ",
+  --     Array         = "󰅪 ",
+  --     Object        = "󰅩 ",
+  --     Key           = "󰌋 ",
+  --     Null          = "󰟢 ",
+  --     EnumMember    = " ",
+  --     Struct        = "󰌗 ",
+  --     Event         = " ",
+  --     Operator      = "󰆕 ",
+  --     TypeParameter = "󰊄 ",
+  --   },
+  --   lsp = {
+  --     auto_attach = false,
+  --     preference = nil,
+  --   },
+  --   highlight = false,
+  --   separator = " > ",
+  --   depth_limit = 0,
+  --   depth_limit_indicator = "..",
+  --   safe_output = true,
+  --   lazy_update_context = false,
+  --   click = false,
+  -- })
 
   local working_dir = vim.fn.getcwd()
 
@@ -78,9 +78,9 @@ return function()
     buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
     buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
-    if client.server_capabilities.documentSymbolProvider then
-      navic.attach(client, bufnr)
-    end
+    -- if client.server_capabilities.documentSymbolProvider then
+    --   navic.attach(client, bufnr)
+    -- end
   end
 
   -- LSP servers setup
