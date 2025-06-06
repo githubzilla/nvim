@@ -8,39 +8,46 @@ return function()
     require('avante').setup({
         provider = "copilot",
         auto_suggestions_provider = "copilot",
-        copilot = {
-            -- model = "claude-3.7-sonnet",
-            model = "claude-sonnet-4",
-            max_tokens = 655360,
-            proxy = "http://192.168.1.69:6152"
-            -- allow_insecure = true,
-        },
-        vendors = {
-            ["gemini-2.0"] = {
-                __inherited_from = "openai",
-                api_key_name = "avantekey",
-                endpoint = "https://openrouter.ai/api/v1",
-                model = "google/gemini-2.0-flash-001",
-                disable_tools = true,
+        providers = {
+            copilot = {
+                model = "claude-3.7-sonnet",
+                -- model = "claude-sonnet-4",
+                extra_request_body = {max_tokens = 655360}
+                -- proxy = "http://192.168.1.69:6152"
+                -- allow_insecure = true,
+            },
+            openai = {
+                api_key_name = "my_access_key1",
+                endpoint = "https://api.deepseek.com",
+                model = "deepseek-chat",
                 timeout = 30000
             },
-            ["deepseek-r1"] = {
-                __inherited_from = "openai",
-                api_key_name = "avantekey",
-                endpoint = "https://openrouter.ai/api/v1",
-                model = "deepseek/deepseek-r1:free",
-                disable_tools = true,
-                timeout = 30000
-            },
-            ["openai-o3-mini"] = {
-                __inherited_from = "openai",
-                api_key_name = "avantekey",
-                endpoint = "https://openrouter.ai/api/v1",
-                model = "openai/o3-mini",
-                timeout = 30000
+            vendors = {
+                ["gemini-2.0"] = {
+                    __inherited_from = "openai",
+                    api_key_name = "avantekey",
+                    endpoint = "https://openrouter.ai/api/v1",
+                    model = "google/gemini-2.0-flash-001",
+                    disable_tools = true,
+                    timeout = 30000
+                },
+                ["deepseek-r1"] = {
+                    __inherited_from = "openai",
+                    api_key_name = "avantekey",
+                    endpoint = "https://openrouter.ai/api/v1",
+                    model = "deepseek/deepseek-r1:free",
+                    disable_tools = true,
+                    timeout = 30000
+                },
+                ["openai-o3-mini"] = {
+                    __inherited_from = "openai",
+                    api_key_name = "avantekey",
+                    endpoint = "https://openrouter.ai/api/v1",
+                    model = "openai/o3-mini",
+                    timeout = 30000
+                }
             }
         },
-
         selector = {
             provider = "fzf_lua",
             provider_opts = {
