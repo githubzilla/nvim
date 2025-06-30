@@ -55,12 +55,12 @@ return function()
     local map = vim.keymap.set
     local opts = {noremap = true, silent = true}
     map("n", "<leader>cf", function()
-        conform.format({timeout_ms = 1000, lsp_fallback = true})
+        conform.format({timeout_ms = 3000, lsp_fallback = true})
     end, opts)
 
     -- Also add visual mode mapping for partial formatting
     map("v", "<leader>cf", function()
-        conform.format({timeout_ms = 1000, lsp_fallback = true})
+        conform.format({timeout_ms = 3000, lsp_fallback = true})
     end, opts)
 end
 
