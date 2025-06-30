@@ -4,6 +4,7 @@ return function()
         "--no-ignore-vcs --glob=!*.o --glob=!*.d --glob=!bld/** --glob=!bin/** --glob=!.git/** --glob=!.cache/** --glob=!node_modules/** --glob=!build/** --glob=!compile_commands.json"
 
     require("fzf-lua").setup({
+	"hide",
         -- Path display options
         files = {
             path_shorten = 9, -- Shorten directory names to first letter
