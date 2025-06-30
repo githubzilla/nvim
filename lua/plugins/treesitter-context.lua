@@ -2,7 +2,7 @@ return function()
 
 require('treesitter-context').setup({
   enable = true, -- Enable this plugin (can be enabled later via commands)
-  max_lines = 10, -- How many lines the window can be from the top of the screen
+  max_lines = 20, -- How many lines the window can be from the top of the screen
   trim_scope = 'outer', -- Which context lines to display: 'outer' shows more context
   min_window_height = 0, -- Minimum window height to enable context
   line_numbers = true, -- Whether to display line numbers
