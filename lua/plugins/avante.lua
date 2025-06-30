@@ -10,8 +10,8 @@ return function()
         auto_suggestions_provider = "copilot",
         providers = {
             copilot = {
-                model = "claude-3.7-sonnet",
-                -- model = "claude-sonnet-4",
+                -- model = "claude-3.7-sonnet",
+                model = "claude-sonnet-4",
                 extra_request_body = {max_tokens = 655360}
                 -- proxy = "http://192.168.1.69:6152"
                 -- allow_insecure = true,
