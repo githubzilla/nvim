@@ -1,7 +1,7 @@
 return function()
     -- Define common filter pattern for ripgrep
     local common_filter =
-        "--no-ignore-vcs --glob=!*.o --glob=!*.d --glob=!bld/** --glob=!bin/** --glob=!.git/** --glob=!.cache/** --glob=!node_modules/** --glob=!build/** --glob=!compile_commands.json --glob=!install/** --glob=!dist/** --glob=!coverage/** --glob=!vendor/** --glob=!*.min.js --glob=!*.min.css --glob=!*.map --glob=!.vscode/**"
+        "--no-ignore-vcs --glob=!*.o --glob=!*.d --glob=!bld/** --glob=!bin/** --glob=!.git/** --glob=!.cache/** --glob=!node_modules/** --glob=!build/** --glob=!compile_commands.json --glob=!install/** --glob=!dist/** --glob=!coverage/** --glob=!vendor/** --glob=!*.min.js --glob=!*.min.css --glob=!*.map --glob=!.vscode/** --glob=!output/** --glob=!*.log --glob=!*.tmp --glob=!*.swp --glob=!*.swo --glob=!*.bak --glob=!*.old --glob=!*.orig --glob=!.idea/**"
 
     require("fzf-lua").setup({
 	"hide",
