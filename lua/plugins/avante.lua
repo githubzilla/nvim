@@ -10,10 +10,11 @@ return function()
         auto_suggestions_provider = "copilot",
         providers = {
             copilot = {
-                -- model = "claude-3.7-sonnet",
-                model = "claude-sonnet-4",
-                extra_request_body = {max_tokens = 655360}
-                -- proxy = "http://192.168.1.69:6152"
+		-- model = "gpt-5",
+                model = "claude-3.7-sonnet",
+                -- model = "claude-sonnet-4",
+                extra_request_body = {max_tokens = 655360},
+                -- proxy = "http://192.168.1.69:6152",
                 -- allow_insecure = true,
             },
             openai = {
@@ -58,7 +59,27 @@ return function()
             auto_suggestions = false,
             enable_token_counting = false -- counting token can be very slow
         },
-        suggestion = {debounce = 600, throttle = 600}
+        suggestion = {debounce = 600, throttle = 600},
+	rag_service = {
+	    enabled = true,
+	    runner = "docker",
+	    docker_extra_args = "-v /mnt/bigfoot/tianxj_workspace:/mnt/bigfoot/tianxj_workspace -v /mnt/bigfoot/tianxj_hive:/mnt/bigfoot/tianxj_hive",
+	    llm = {
+	       provider = "dashscope",
+               endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+               api_key = "DASHSCOPE_API_KEY",
+	       model = "qwen-plus",
+	    },
+	    embed = {
+	       provider = "dashscope",
+               endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+               api_key = "DASHSCOPE_API_KEY",
+	       model = "text-embedding-v3",
+               extra = { -- Extra configuration options for the Embedding model (optional)
+                 embed_batch_size = 10,
+               },
+	    },
+	},
     })
 
     -- Register keymappings
