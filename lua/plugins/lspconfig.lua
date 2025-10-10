@@ -1,65 +1,19 @@
 return function()
-  -- Highlight settings
+  -- Highlight settings (unchanged)
   vim.cmd([[
     hi LspReferenceText ctermbg=gray guibg=gray
     hi LspReferenceRead ctermbg=lightblue guibg=lightblue
     hi LspReferenceWrite ctermbg=lightgreen guibg=lightgreen
   ]])
 
-  local nvim_lsp = require('lspconfig')
-  -- local navic = require("nvim-navic")
-
-  -- Navic setup
-  -- navic.setup({
-  --   icons = {
-  --     File          = "󰈙 ",
-  --     Module        = " ",
-  --     Namespace     = "󰌗 ",
-  --     Package       = " ",
-  --     Class         = "󰌗 ",
-  --     Method        = "󰆧 ",
-  --     Property      = " ",
-  --     Field         = " ",
-  --     Constructor   = " ",
-  --     Enum          = "󰕘",
-  --     Interface     = "󰕘",
-  --     Function      = "󰊕 ",
-  --     Variable      = "󰆧 ",
-  --     Constant      = "󰏿 ",
-  --     String        = "󰀬 ",
-  --     Number        = "󰎠 ",
-  --     Boolean       = "◩ ",
-  --     Array         = "󰅪 ",
-  --     Object        = "󰅩 ",
-  --     Key           = "󰌋 ",
-  --     Null          = "󰟢 ",
-  --     EnumMember    = " ",
-  --     Struct        = "󰌗 ",
-  --     Event         = " ",
-  --     Operator      = "󰆕 ",
-  --     TypeParameter = "󰊄 ",
-  --   },
-  --   lsp = {
-  --     auto_attach = false,
-  --     preference = nil,
-  --   },
-  --   highlight = false,
-  --   separator = " > ",
-  --   depth_limit = 0,
-  --   depth_limit_indicator = "..",
-  --   safe_output = true,
-  --   lazy_update_context = false,
-  --   click = false,
-  -- })
-
   local working_dir = vim.fn.getcwd()
 
-  -- LSP attach function
-  local on_attach = function(client, bufnr)
+  -- Function to set buffer-local LSP keymaps on attach
+  local function on_lsp_attach(args)
+    local bufnr = args.buf
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
     local opts = { noremap=true, silent=true }
 
-    -- LSP keymaps
     buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -75,17 +29,13 @@ return function()
     buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
     buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
     buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+
     buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
     buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-
-    -- if client.server_capabilities.documentSymbolProvider then
-    --   navic.attach(client, bufnr)
-    -- end
   end
 
-  -- LSP servers setup
-  local capabilities = require("cmp_nvim_lsp").default_capabilities()
-  nvim_lsp.clangd.setup({
+  -- Setup clangd config using vim.lsp.config
+  vim.lsp.config('clangd', {
     cmd = {
       "/usr/bin/clangd-20",
       "--background-index",
@@ -94,42 +44,32 @@ return function()
       "--header-insertion=never",
       "--offset-encoding=utf-16"
     },
-    on_attach = on_attach,
     flags = {
       debounce_text_changes = 150,
     },
     filetypes = {"c", "cpp", "objc", "objcpp", "cuda"},
-    capabilities = capabilities,
+    capabilities = require("cmp_nvim_lsp").default_capabilities(),
   })
 
-  -- nvim_lsp.bashls.setup({
-  --     cmd = {"bash-language-server", "start"}
-  -- })
-  -- nvim_lsp.pyright.setup({})
-  -- nvim_lsp.buf_ls.setup({
-  --     cmd = { "/usr/local/bin/buf-Linux-x86_64", "beta", "lsp", "--timeout=0", "--log-format=text" },
-  --     filetypes = {"proto"},
-  -- })
-  --
-  -- nvim_lsp.rust_analyzer.setup({
-  --   on_attach = on_attach,
-  --   settings = {
-  --     ["rust-analyzer"] = {
-  --       imports = {
-  --         granularity = {
-  --           group = "module",
-  --         },
-  --         prefix = "self",
-  --       },
-  --       cargo = {
-  --         buildScripts = {
-  --           enable = true,
-  --         },
-  --       },
-  --       procMacro = {
-  --         enable = true
-  --       },
-  --     }
-  --   }
-  -- })
-end 
+  -- Enable clangd LSP server
+  vim.lsp.enable('clangd')
+
+  -- Create autocmd to assign keymaps on LspAttach event instead of on_attach
+  vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+      on_lsp_attach(args)
+      -- You can add navic.attach(client, bufnr) here if desired, checking args.client_id
+      -- local client = vim.lsp.get_client_by_id(args.data.client_id)
+      -- if client.server_capabilities.documentSymbolProvider then
+      --   require("nvim-navic").attach(client, args.buf)
+      -- end
+    end,
+  })
+
+  -- Uncomment and migrate other LSP servers similarly by defining their configs with vim.lsp.config and enabling them
+  -- e.g.
+
+  -- vim.lsp.config('pyright', { settings = { ... } })
+  -- vim.lsp.enable('pyright')
+
+end
