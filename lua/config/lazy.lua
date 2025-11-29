@@ -42,6 +42,13 @@ return require("lazy").setup({
     {"mbbill/undotree", config = require("plugins.undotree")},
     { 'echasnovski/mini.files', version = '*', config = require("plugins.mini-files")},
 
+    -- ClangFormat
+ --    {
+	-- "rhysd/vim-clang-format",
+	-- config = require("plugins.clang-format")
+ --    },
+    
+
     -- LSP & Completion
     {
         "neovim/nvim-lspconfig",
@@ -217,7 +224,21 @@ return require("lazy").setup({
               -- Configuration here, or leave empty to use defaults
           })
       end
-    }
+    },
+
+    -- aerial outline
+    {
+      'stevearc/aerial.nvim',
+      opts = {},
+      -- Optional dependencies
+      dependencies = {
+         "nvim-treesitter/nvim-treesitter",
+         "nvim-tree/nvim-web-devicons"
+      },
+      config = function()
+	  require("aerial").setup()
+      end
+    },
 }, 
 {
     install = {colorscheme = {"material"}},

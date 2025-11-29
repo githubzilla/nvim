@@ -1,66 +1,130 @@
 -- Configuration for conform.nvim
 return function()
-    local conform = require("conform")
+local conform = require("conform")
 
-    conform.setup({
-        formatters_by_ft = {
-            c = {"clang_format"},
-            cpp = {"clang_format"},
-            objc = {"clang_format"},
-            objcpp = {"clang_format"},
-            cuda = {"clang_format"},
-            proto = {"buf"},
-            lua = {"lua_format"},
-            json = {"jq"},
-        },
+conform.setup({
+  formatters_by_ft = {
+    -- C/C++ files
+    c = { "clang_format" },
+    cpp = { "clang_format" },
+    h = { "clang_format" },
+    -- Lua files
+    lua = { "lua_format" },
+    -- JSON files
+    json = { "jq" },
+    jsonc = { "jq" },
+    -- ProtoBuf files
+    proto = { "buf_format" },
+    -- Bash/Shell files
+    sh = { "shfmt" },
+    bash = { "shfmt" },
+    -- Python files
+    python = { "black" },
+  },
+  formatters = {
+    -- C/C++ formatter
+    clang_format = {
+      command = "/usr/bin/clang-format-18",
+      args = {
+        "--assume-filename=$FILENAME",
+        "--style=file",
 
-        -- Configure formatters
-        formatters = {
-            clang_format = {
-                command = "/usr/bin/clang-format-17",
-                args = {"--style=file"}, -- Style=file tells clang-format to look for .clang-format files
-                -- Use root_dir to ensure it searches up from the current file for .clang-format
-                cwd = function(self, ctx)
-                    -- Look for .clang-format files starting from the directory of the file being formatted
-                    -- and search upwards through parent directories
-                    local file_dir = vim.fn.fnamemodify(ctx.filename, ":p:h")
-                    return file_dir
-                end
-            },
-            -- Lua formatter
-            lua_format = {
-                -- You can customize lua-format options here
-                command = "/usr/local/bin/lua-format"
-            },
-            -- JSON formatter
-            jq = {
-                args = {"--indent", "2"} -- Format JSON with 2-space indentation
-            },
-	    -- ProtoBuf formatter
-	    buf = {
-		commmand = "/usr/local/bin/buf-Linux-x86_64",
-		args = {"format"},
-	    },
-        }
+        "--fallback-style=none",
+      },
+      stdin = true,
+      cwd = require("conform.util").root_file({
+        ".clang-format",
+        ".clang-format-18",
+        ".clang-tidy",
+        "compile_commands.json",
+        "Makefile",
+        "CMakeLists.txt",
+      }),
+    },
+    -- Lua formatter
+    lua_format = {
+      command = "lua-format",
+      args = {
+        "--indent-width=2",
+        "--tab-width=2",
+        "--continuation-indent-width=2",
+        "--spaces-before-call=1",
+        "--double-quote-to-single-quote=true",
+        "--column-limit=80",
+      },
+      stdin = true,
+    },
+    -- JSON formatter
+    jq = {
+      command = "jq",
+      args = { "." },
+      stdin = true,
+    },
+    -- ProtoBuf formatter
+    buf_format = {
+      command = "buf",
+      args = { "format", "-" },
+      stdin = true,
+    },
+    -- Bash/Shell formatter
+    shfmt = {
+      command = "shfmt",
+      args = {
+        "-i", "2",
+        "-bn",
+        "-ci",
+        "-sr",
+      },
+      stdin = true,
+    },
+    -- Python formatter - Black
+    black = {
+      command = "black",
+      args = {
+        "--quiet",  -- Suppress output
+        "-",        -- Read from stdin
+      },
+      stdin = true,
+    },
+  },
+})
 
-        -- Format on save
-        -- format_on_save = {
-        --   -- These options will be passed to conform.format()
-        --   timeout_ms = 500,
-        --   lsp_fallback = true,
-        -- },
-    })
+-- Keymap to format current buffer
+vim.keymap.set("n", "<leader>cf", function()
+  conform.format({
+    lsp_fallback = true,
+    async = false,
+    timeout_ms = 1000,
+  })
+end, { desc = "Format file" })
 
-    -- Keymaps
-    local map = vim.keymap.set
-    local opts = {noremap = true, silent = true}
-    map("n", "<leader>cf", function()
-        conform.format({timeout_ms = 3000, lsp_fallback = true})
-    end, opts)
+-- Visual mode keymap to format selection
+vim.keymap.set("v", "<leader>cf", function()
+  conform.format({
+    range = true,
+    async = false,
+    timeout_ms = 1000,
+  })
+end, { desc = "Format selection" })
 
-    -- Also add visual mode mapping for partial formatting
-    map("v", "<leader>cf", function()
-        conform.format({timeout_ms = 3000, lsp_fallback = true})
-    end, opts)
+-- Format on save for various file types
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = {
+--     "*.c", "*.cpp", "*.h", "*.hpp",  -- C/C++
+--     "*.lua",                         -- Lua
+--     "*.json", "*.jsonc",             -- JSON
+--     "*.proto",                       -- ProtoBuf
+--     "*.sh", "*.bash",                -- Shell scripts
+--   },
+--   callback = function(args)
+--     conform.format({
+--       bufnr = args.buf,
+--       lsp_fallback = true,
+--       async = false,
+--       timeout_ms = 1000,
+--
+--     })
+--   end,
+-- })
 end
 
