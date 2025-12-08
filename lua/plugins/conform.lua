@@ -49,7 +49,7 @@ conform.setup({
         "--tab-width=2",
         "--continuation-indent-width=2",
         "--spaces-before-call=1",
-        "--double-quote-to-single-quote=true",
+        -- "--double-quote-to-single-quote=true",
         "--column-limit=80",
       },
       stdin = true,
