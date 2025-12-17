@@ -11,11 +11,12 @@ return function()
         providers = {
             copilot = {
 		-- model = "gpt-5",
-                model = "claude-3.7-sonnet",
-                -- model = "claude-sonnet-4",
-                extra_request_body = {max_tokens = 655360},
-                -- proxy = "http://192.168.1.69:6152",
+                -- model = "claude-3.5-sonnet",
+                model = "claude-sonnet-4",
+                -- extra_request_body = {max_tokens = 655360},
+                proxy = "http://raspberrypi.local:6152",
                 -- allow_insecure = true,
+		-- disable_tools = false,
             },
             openai = {
                 api_key_name = "my_access_key1",
@@ -60,26 +61,42 @@ return function()
             enable_token_counting = false -- counting token can be very slow
         },
         suggestion = {debounce = 600, throttle = 600},
-	rag_service = {
-	    enabled = true,
-	    runner = "docker",
-	    docker_extra_args = "-v /mnt/bigfoot/tianxj_workspace:/mnt/bigfoot/tianxj_workspace -v /mnt/bigfoot/tianxj_hive:/mnt/bigfoot/tianxj_hive",
-	    llm = {
-	       provider = "dashscope",
-               endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
-               api_key = "DASHSCOPE_API_KEY",
-	       model = "qwen-plus",
-	    },
-	    embed = {
-	       provider = "dashscope",
-               endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
-               api_key = "DASHSCOPE_API_KEY",
-	       model = "text-embedding-v3",
-               extra = { -- Extra configuration options for the Embedding model (optional)
-                 embed_batch_size = 10,
-               },
-	    },
-	},
+	-- rag_service = {
+	--     enabled = true,
+	--     runner = "docker",
+	--     docker_extra_args = "--add-host=host.docker.internal:host-gateway -v /mnt/bigfoot/tianxj_workspace:/mnt/bigfoot/tianxj_workspace -v /mnt/bigfoot/tianxj_hive:/mnt/bigfoot/tianxj_hive",
+	--     llm = {
+	--        provider = "ollama",
+ --               endpoint = "http://host.docker.internal:11434",
+ --               api_key = "",
+	--        model = "llama2",
+	--        extra = nil,
+	--     },
+	--     embed = {
+	--        provider = "ollama",
+ --               endpoint = "http://host.docker.internal:11434",
+ --               api_key = "",
+	--        model = "nomic-embed-text",
+ --               extra = { -- Extra configuration options for the Embedding model (optional)
+ --                 embed_batch_size = 10,
+ --               },
+	--     },
+	    -- llm = {
+	    --    provider = "dashscope",
+     --           endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+     --           api_key = "DASHSCOPE_API_KEY",
+	    --    model = "qwen-plus",
+	    -- },
+	    -- embed = {
+	    --    provider = "dashscope",
+     --           endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+     --           api_key = "DASHSCOPE_API_KEY",
+	    --    model = "text-embedding-v3",
+     --           extra = { -- Extra configuration options for the Embedding model (optional)
+     --             embed_batch_size = 10,
+     --           },
+	    -- },
+	-- },
     })
 
     -- Register keymappings
