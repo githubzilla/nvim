@@ -1,7 +1,7 @@
 return function()
   require('render-markdown').setup({
     code = {
-      style = "normal"
+      style = "language"
     }
   })
 end
