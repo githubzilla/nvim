@@ -20,6 +20,8 @@ conform.setup({
     bash = { "shfmt" },
     -- Python files
     python = { "black" },
+    -- Javascript files
+    javascript = { "prettier" },
   },
   formatters = {
     -- C/C++ formatter
@@ -84,6 +86,12 @@ conform.setup({
         "--quiet",  -- Suppress output
         "-",        -- Read from stdin
       },
+      stdin = true,
+    },
+    -- Javascript formatter - Prettierd
+    prettierd = {
+      command = "prettierd",
+      args = { "$FILENAME" },
       stdin = true,
     },
   },
