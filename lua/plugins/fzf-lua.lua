@@ -142,6 +142,29 @@ return function()
     end, opts)
     map('n', '<leader>lr', function() fzf.lsp_references() end, opts)
 
+    -- Visual mode grep with selected text
+    map('v', '<leader>fG', function()
+        -- Get current visual selection by yanking to unnamed register
+        local saved_reg = vim.fn.getreg('"')
+        local saved_regtype = vim.fn.getregtype('"')
+
+        -- Yank current visual selection
+        vim.cmd('normal! y')
+
+        -- Get the yanked text
+        local selected_text = vim.fn.getreg('"')
+
+        -- Restore the original register
+        vim.fn.setreg('"', saved_reg, saved_regtype)
+
+        -- Use the text as-is without escaping to avoid double escaping issues
+        fzf.live_grep({
+            rg_opts = common_filter ..
+                " --no-heading --with-filename --line-number --column --smart-case",
+            search = selected_text
+        })
+    end, opts)
+
     -- Resume
     map('n', '<leader>tr', function() fzf.resume() end, opts)
 end
