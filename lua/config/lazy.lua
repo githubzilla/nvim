@@ -47,7 +47,7 @@ return require("lazy").setup({
 	-- "rhysd/vim-clang-format",
 	-- config = require("plugins.clang-format")
  --    },
-    
+
 
     -- LSP & Completion
     {
@@ -93,7 +93,7 @@ return require("lazy").setup({
     },
 
     -- Debug
-    {"puremourning/vimspector", 
+    {"puremourning/vimspector",
      enabled = not is_windows,
      config = require("plugins.vimspector")
     },
@@ -174,6 +174,10 @@ return require("lazy").setup({
         },
         config = require("plugins.avante")
     },
+    {
+      "xTacobaco/cursor-agent.nvim",
+      config = require("plugins.cursor-agent"),
+    },
 
     -- Trouble
     {
@@ -239,7 +243,7 @@ return require("lazy").setup({
 	  require("aerial").setup()
       end
     },
-}, 
+},
 {
     install = {colorscheme = {"material"}},
     checker = {enabled = true, notify = false},
