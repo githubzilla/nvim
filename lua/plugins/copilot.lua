@@ -14,4 +14,4 @@ return function()
     ["go"] = true,
     ["python"] = true,
   }
-end 
+end

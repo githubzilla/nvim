@@ -32,8 +32,17 @@ return require("lazy").setup({
   --     config = require("plugins.nvim-tree")
   -- },
   {"stevearc/oil.nvim", config = require("plugins.oil")}, -- Editor Features
-  {"jiangmiao/auto-pairs"}, {"godlygeek/tabular"},
+  {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+    -- use opts = {} for passing setup options
+    -- this is equivalent to setup({}) function
+  },
+  --
+  {"godlygeek/tabular"},
   {"phaazon/hop.nvim", config = require("plugins.hop")},
+
   {"mbbill/undotree", config = require("plugins.undotree")}, {
     'echasnovski/mini.files',
     version = '*',
@@ -117,6 +126,16 @@ return require("lazy").setup({
     config = require("plugins.markdown")
   }, -- AI Assistance
   {"github/copilot.vim", config = require("plugins.copilot")},
+  {
+    "NickvanDyke/opencode.nvim",
+    dependencies = {
+      -- Recommended for `ask()` and `select()`.
+      -- Required for `snacks` provider.
+      ---@module 'snacks' <- Loads `snacks.nvim` types for configuration intellisense.
+      { "folke/snacks.nvim", opts = { input = {}, picker = {}, terminal = {} } },
+    },
+    config = require("plugins.opencode"),
+  },
   -- Trouble
   {
     "folke/trouble.nvim",
