@@ -69,7 +69,21 @@ return function()
   -- Uncomment and migrate other LSP servers similarly by defining their configs with vim.lsp.config and enabling them
   -- e.g.
 
-  -- vim.lsp.config('pyright', { settings = { ... } })
-  -- vim.lsp.enable('pyright')
+  vim.lsp.config('pyright', {
+    cmd = { 'pyright-langserver', '--stdio' },
+    filetypes = { 'python' },
+    settings = {
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          diagnosticMode = 'workspace',
+          useLibraryCodeForTypes = true,
+          typeCheckingMode = 'basic',
+        }
+      }
+    },
+    capabilities = require("cmp_nvim_lsp").default_capabilities(),
+  })
+  vim.lsp.enable('pyright')
 
 end
