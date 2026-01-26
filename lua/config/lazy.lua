@@ -74,7 +74,8 @@ return require("lazy").setup({
     config = require("plugins.treesitter-textobjects")
   }, -- Formatting & Linting
   {"stevearc/conform.nvim", config = require("plugins.conform")},
-  {"mfussenegger/nvim-lint", config = require("plugins.nvim-lint")}, {
+  -- {"mfussenegger/nvim-lint", config = require("plugins.nvim-lint")},
+  {
     'numToStr/Comment.nvim',
     opts = {
       -- add any options here
