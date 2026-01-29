@@ -26,7 +26,17 @@ return require("lazy").setup({
     config = require("plugins.indentline")
   }, {"907th/vim-auto-save", config = require("plugins.autosave")},
   {"rbgrouleff/bclose.vim"}, -- File Management
-  {"kelly-lin/ranger.nvim", config = require("plugins.ranger")}, -- {
+  -- {"kelly-lin/ranger.nvim", config = require("plugins.ranger")},
+  {
+    "mikavilpas/yazi.nvim",
+    version = "*", -- use the latest stable version
+    event = "VeryLazy",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", lazy = true },
+    },
+    config = require("plugins.yazi"),
+  },
+  -- {
   --     "nvim-tree/nvim-tree.lua",
   --     dependencies = {"nvim-tree/nvim-web-devicons"},
   --     config = require("plugins.nvim-tree")
