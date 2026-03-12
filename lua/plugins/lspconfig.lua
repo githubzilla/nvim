@@ -86,4 +86,9 @@ return function()
   })
   vim.lsp.enable('pyright')
 
+  -- Register the GitHub Copilot config to suppress the checkhealth warning.
+  -- copilot.vim manages its own LSP client; this just satisfies vim.lsp's
+  -- config registry.
+  vim.lsp.config('GitHub Copilot', {})
+
 end
