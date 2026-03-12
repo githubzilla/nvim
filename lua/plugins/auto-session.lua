@@ -1,6 +1,6 @@
 return function()
   -- Set session options
-  vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+  vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,localoptions"
 
   -- Setup auto-session
   require('auto-session').setup({
@@ -18,4 +18,4 @@ return function()
       load_on_setup = false,
     },
   })
-end 
+end
