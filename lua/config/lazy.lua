@@ -51,7 +51,7 @@ return require("lazy").setup({
   },
   --
   {"godlygeek/tabular"},
-  {"phaazon/hop.nvim", config = require("plugins.hop")},
+  {"smoka7/hop.nvim", config = require("plugins.hop")},
 
   {"mbbill/undotree", config = require("plugins.undotree")}, {
     'echasnovski/mini.files',
@@ -125,12 +125,7 @@ return require("lazy").setup({
   {"rmagatti/auto-session", config = require("plugins.auto-session")},
 
   -- Note Taking
-  {
-    "nvim-neorg/neorg",
-    lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-    version = "*", -- Pin Neorg to the latest stable release
-    config = require("plugins.neorg")
-  }, -- Markdown
+  -- Markdown
   {
     "MeanderingProgrammer/render-markdown.nvim",
     dependencies = {"nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim"},
