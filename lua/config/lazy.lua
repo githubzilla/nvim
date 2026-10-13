@@ -91,11 +91,12 @@ return require("lazy").setup({
       -- add any options here
     }
   }, -- Debug
-  {
-    "puremourning/vimspector",
-    enabled = not is_windows,
-    config = require("plugins.vimspector")
-  }, -- Which Key
+  -- {
+  --   "puremourning/vimspector",
+  --   enabled = not is_windows,
+  --   config = require("plugins.vimspector")
+  -- },
+  -- Which Key
   {"folke/which-key.nvim", config = require("plugins.which-key")},
 
   -- Task Running
