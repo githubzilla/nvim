@@ -72,7 +72,9 @@ return require("lazy").setup({
   }, {"ray-x/lsp_signature.nvim", config = require("plugins.lsp_signature")},
 
   -- Treesitter
-  {"nvim-treesitter/nvim-treesitter", branch = "master", build = ":TSUpdate"},
+  -- main 分支：支持 Neovim 0.12。master 分支上游已归档且与 0.12 不兼容
+  -- （打开含 ```yaml 的 md 会崩：attempt to call method 'range'）。
+  {"nvim-treesitter/nvim-treesitter", branch = "main", lazy = false, build = ":TSUpdate"},
 
   {
     "nvim-treesitter/nvim-treesitter-context",

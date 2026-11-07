@@ -1,5 +1,12 @@
 return function()
-  require('mini.files').setup()
+  require('mini.files').setup({
+    -- mini.files 默认 use_as_default_explorer = true，它会在 VimEnter 里执行
+    -- `autocmd! FileExplorer *` 来禁用 netrw。但本配置已由 yazi.nvim 接管 netrw
+    -- (loaded_netrw=1)，FileExplorer augroup 不存在，该命令会抛
+    -- "E216: No such group or event"，并残留到首次打开文件时显示。
+    -- 交给 yazi 处理即可，这里关掉。
+    options = { use_as_default_explorer = false },
+  })
   -- Add key mapping for \mf to open MiniFiles
   vim.keymap.set('n', '<leader>mf', ':lua MiniFiles.open()<CR>', { noremap = true, silent = true })
   -- Add key mapping for \mp to open MiniFiles at the current buffer's path
